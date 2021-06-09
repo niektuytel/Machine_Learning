@@ -1,0 +1,8 @@
+Initialisation of model parameters
+We will wrap all functions in the LSTM class.
+
+There is not conclusive evidence on which optimiser performs best for this type of architecture. In this implementation, we will use the Adam optimiser, as general empirical results demonstrate that it performs favourably compared to other optimisation methods, it converges fast and can effectively navigate local minima by adapting the learning rate for each parameter. The moving averages, \beta_{1} and \beta_{2} are initialised as suggested in the original paper. Here’s a quick explanation of how Adam works and how it compares to other methods.
+
+After the learning rate, weight initialisation is the second most important setting for LSTMs and other recurrent networks; improper initialisation could slow down the training process to the point of impracticality. We will therefore use the high-performing Xavier initialisation, which involves randomly sampling weights from a distribution \mathcal{N}(0, \frac{1}{\sqrt{n}}), where n is the number of neurons in the preceding layer.
+
+The input to the LSTM, z, has dimensions [vocab_size + n_h, 1] . Since the LSTM layer wants to output n_h neurons, each weight should be of size [n_h, vocab_size + n_h] and each bias of size [n_h, 1]. Exception is the weight and bias at the output softmax layer (Wv, bv). The resulting output will be a probability distribution over all possible characters in the vocabulary, therefore of size [vocab_size, 1], hence Wv should be of size [vocab_size, n_h] and bv of size [n_h, 1].
