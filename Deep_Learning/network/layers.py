@@ -1,12 +1,344 @@
 # sample code update Network to his own file (import)
 import numpy as np
 from copy import copy
+from terminaltables import AsciiTable
 
 # functions
 from algorithms.activation_functions import act_functions 
 from algorithms.loss_functions import loss_functions 
 from algorithms.optimizer_functions import opt_functions
 from parameters import *
+
+
+# sys.path.insert(1, "D:\Programming\learn\AI\sample\ML-From-Scratch") 
+# from mlfromscratch.deep_learning.optimizers import Adam
+# from mlfromscratch.deep_learning.loss_functions import CrossEntropy, SquareLoss
+# from mlfromscratch.deep_learning import NeuralNetwork
+
+# import or in Layer class
+def default_weights(shape, static, limit=1):
+    n_features = shape[0]
+    n_units  = shape[1]
+    n_total  = n_features * n_units
+
+    if static:
+        # linear spaced out:
+        #     The first param is 0 & the last param is 1,
+        #     all params in between are lineared spaced out.
+        #     makes it more readable & more sparsed than randomized
+        weights = np.zeros(shape)
+        lin_spaced = np.linspace(-limit, limit, n_total)
+
+        for i in range(n_features):
+            start = i * n_units
+            end = start + n_units
+            weights[i] = lin_spaced[start:end]
+
+        # [[0.  0.2] [0.4 0.6] [0.8 1. ]]
+        return weights
+    else:
+        # random
+        limit = 1 / np.sqrt(n_features)
+        weights = np.random.uniform(-limit, limit, shape)
+
+        # [[0.50466882 0.58159532] [0.77758233 0.78466492] [0.44969037 0.5287821 ]]
+        return weights
+
+
+class Cell:
+    def __init__(self, optimizer):
+        self.values = []
+
+        # weights
+        self.W = None
+        self.W_derivative = None
+        self.W_optimizer = copy(optimizer)
+
+        # bias
+        self.b = None
+        self.b_derivative = None
+        self.b_optimizer = copy(optimizer)
+
+    def initialize(self, n_inputs, n_outputs):
+        limit = 1 / np.sqrt(n_inputs)
+        size = (n_inputs, n_outputs)
+        
+        self.W = np.random.uniform(-limit, limit, size=size)
+        self.b = np.zeros((1, n_outputs))
+        self.clear_derivatives()
+
+    def clear_derivatives(self):
+        self.W_derivative = np.zeros_like(self.W)
+        self.b_derivative = np.zeros_like(self.b)
+
+    def update_weights(self):
+        if self.W_optimizer != None:
+            self.W = self.W_optimizer.update(self.W, self.W_derivative)
+
+        if self.b_optimizer != None:
+            self.b = self.b_optimizer.update(self.b, self.b_derivative)
+
+# layers
+
+class Layer_V2:
+    """
+    Layer_V2()
+    """
+    def __init__(self, n_units=None, input_shape=None, activation_name=None, optimizer_name=None):
+        self.n_units       = n_units
+        self.inputs_shape  = input_shape
+        self.outputs_shape = (n_units,)
+        self.layer_input   = None
+        self.layer_output  = None
+        self.activation    = None
+        self.optimizer     = None
+
+        if activation_name != None:
+            self.activation = act_functions[activation_name]()
+        
+        if optimizer_name != None:
+            self.optimizer = opt_functions[optimizer_name]()
+
+    def forward(self, X):
+        self.layer_output = X
+        if self.activation != None:    
+            return self.activation(X)
+        else: 
+            return X
+  
+    def backward(self, gradient):
+        if self.activation != None:
+            return gradient * self.activation.derivative(self.layer_output)
+        else:
+            return gradient
+
+    def input_shape(self, new_value=None):
+        if new_value != None:
+            self.inputs_shape = new_value
+
+        return self.inputs_shape
+
+    def output_shape(self, new_value=None):
+        if new_value != None:
+            self.outputs_shape = new_value
+            
+        return self.outputs_shape
+
+    def parameters(self): 
+        return 0
+
+    def activation_name(self):
+        return self.activation.__class__.__name__
+
+# class Flatten(Layer_V2):
+#     def __init__(self, input_shape):
+#         self.prev_shape = None
+#         self.input_shape = None
+
+class Activation(Layer_V2):
+    """
+    Activation(activation_name="relu")
+    """
+    def layer_name(self):
+        return self.__class__.__name__
+
+    # bypass 
+    def backward_pass(self, gradient): return self.backward(gradient)
+    def forward_pass(self, X, training=True): return self.forward(X)
+    def set_input_shape(self, shape): self.inputs_shape = self.outputs_shape = shape
+
+class Dense_V2(Layer_V2):
+    """
+    Dense_V2(n_units=512, input_shape=(784,), activation="relu", optimizer="adam")
+    
+    # optimizer default: "adam"
+    Dense_V2(n_units=512, input_shape=(784,), activation="relu")
+    
+    # activation default: None
+    Dense_V2(n_units=512, input_shape=(784,))
+
+    # only on: network.add(...)
+    Dense_V2(n_units=512)
+    """
+    def __init__(self, n_units, input_shape, activation=None, optimizer="adam"):
+        super().__init__(n_units, input_shape, activation, optimizer)
+
+        self.cell = Cell(self.optimizer)
+        self.cell.initialize(input_shape[0], n_units)
+
+    def forward(self, X):
+        self.layer_input = X
+        output = X.dot(self.cell.W) + self.cell.b
+        return super().forward(output)
+        
+    def backward(self, gradient):
+        gradient = super().backward(gradient)
+        W = self.cell.W
+
+        # Calculate gradient w.r.t layer weights
+        self.cell.clear_derivatives()
+        self.cell.W_derivative = self.layer_input.T.dot(gradient)
+        self.cell.b_derivative = np.sum(gradient, axis=0, keepdims=True)
+        self.cell.update_weights()
+        
+        # Return accumulated gradient for next layer
+        # Calculated based on the weights used during the forward pass
+        return gradient.dot(W.T)
+
+    def layer_name(self):
+        return self.__class__.__name__
+
+    def parameters(self): 
+        return np.prod(self.cell.W.shape) + np.prod(self.cell.b.shape)
+
+    # bypass 
+    def backward_pass(self, gradient): return self.backward(gradient)
+    def forward_pass(self, X, training=True): return self.forward(X)
+    def set_input_shape(self, shape): self.inputs_shape = shape
+
+class Conv2D(Layer_V2):
+    # x = layers.Conv2D(32, 3, activation="relu", strides=2, padding="same")(encoder_inputs)
+    """ layers.Conv2D(n_filters=32, kernel_size=3, input_shape=(28, 28, 1), activation="relu", optimizer="adam", strides=2, padding="same") """
+    def __init__(self, n_filters, kernel_size, input_shape, activation, optimizer, strides=1, padding="same"):
+        self.n_filters = n_filters
+        self.kernel_size = kernel_size
+        self.input_shape = input_shape
+        self.activation = act_functions[activation]()
+        self.optimizer = opt_functions[optimizer]()
+        self.strides = strides
+        self.padding = padding
+
+        self.cell = Cell(self.optimizer)
+
+        
+        # # Initialize the weights
+        # filter_height, filter_width = input_shape
+        # limit = 1 / np.sqrt(np.prod(input_shape))
+        # self.W  = np.random.uniform(-limit, limit, size=(self.n_filters, self.input_shape[0], filter_height, filter_width))
+        # self.w0 = np.zeros((self.n_filters, 1))
+
+
+        # self.cell.initialize(n_inputs=n_filters)
+    
+
+
+# network
+
+class Network_V2():
+    def __init__(self, loss_name="MSE"):
+        self.layers = []
+        self.loss_function = loss_functions[loss_name]()
+
+    def add(self, layer):
+        self.layers.append(layer)
+
+    def remove(self, layer_index):
+        del self.layers[layer_index]
+        return self.layers
+    
+    def test_on_batch(self, X, y):
+        y_pred = self._forward(X)
+        loss = np.mean(self.loss_function(y, y_pred))
+        acc = self.loss_function.acc(y, y_pred)
+        return loss, acc
+
+    def train_on_batch(self, X, y):
+        y_pred = self._forward(X)
+        loss = np.mean(self.loss_function(y, y_pred))
+        acc = self.loss_function.acc(y, y_pred)
+
+        # Calculate the gradient of the loss function wrt y_pred
+        loss_grad = self.loss_function.gradient(y, y_pred)
+
+        # Backpropagate. Update weights
+        self._backward(loss_grad, y_pred)
+
+        return loss, acc
+
+    # def fit(self, X, y, n_epochs, batch_size=64, verbose=True):
+    #     history_loss = []
+
+    #     for epoch in range(n_epochs):
+    #         batch_error = []
+    #         # for X_batch, y_batch in self._gen_batch(X, y, batch_size):
+    #         y_pred = self._forward(X)
+
+    #         # the loss derivative with respect to y_pred
+    #         gradient_loss = self.loss_function.gradient(y, y_pred)
+
+    #         # Backpropagate. Update weights
+    #         self._backward(gradient_loss, y_pred)
+
+    #         batch_error.append(
+    #             np.mean(self.loss_function(y, y_pred))
+    #         )
+            
+    #         history_loss.append(
+    #             np.mean(batch_error)
+    #         )
+
+    #         # # display trained network state
+    #         # # print("called")
+    #         # if verbose:
+    #         #     print(f"\r[{epoch}/{n_epochs}] loss:{history_loss[-1]}", end="")
+
+    #     # # model accuracy
+    #     # if verbose:
+    #     #     y_true = np.argmax(y, axis=2)
+    #     #     y_pred = np.argmax(self.predict(X), axis=2)
+    #     #     accuracy = int(np.mean(np.sum(y_true == y_pred, axis=0)/len(y)) * 100)
+    #     #     print(f"\nAccuracy: {accuracy}%\n")
+
+    #     return history_loss
+
+    def _backward(self, gradient_loss, y_pred):
+        # update weights in each layer, bind the output to next input gradient loss
+        for layer in reversed(self.layers):
+            gradient_loss = layer.backward(gradient_loss)
+            
+    def _forward(self, X):
+        output = X
+
+        # walk through layers, bind the output to input
+        for layer in self.layers:
+            output = layer.forward(output)
+
+        return output
+
+    def summary(self, name="Model Summary"):
+        # Print model name
+        print (AsciiTable([[name]]).table)
+        # Network input shape (first layer's input shape)
+        print ("Input Shape: %s" % str(self.layers[0].input_shape()))
+        # Iterate through network and get each layer's configuration
+        table_data = [["Layer Type", "Parameters", "Output Shape", "Activation name"]]
+        tot_params = 0
+        for layer in self.layers:
+            layer_name = layer.layer_name()
+            params = layer.parameters()
+            out_shape = layer.output_shape()
+            activation_name = layer.activation_name()
+            table_data.append([layer_name, str(params), str(out_shape), str(activation_name)])
+            tot_params += params
+        # Print network configuration table
+        print (AsciiTable(table_data).table)
+        print ("Total Parameters: %d\n" % tot_params)
+
+    def predict(self, X):
+        return self._forward(X)
+
+
+
+
+class Layer(object):
+    def __init__(self, n_units, input_shape, activation, optimizer):
+        self.n_units      = n_units
+        self.input_shape  = input_shape
+        self.output_shape = (n_units,)
+        
+        self.layer_input   = None
+        self.activation    = act_functions[activation]()
+        self.optimizer     = opt_functions[optimizer]()
 
 class Gate():
     # Single gate used in recurrent neural networks
@@ -54,45 +386,6 @@ class Gate():
         self.W = self.W_optimizer.update(self.W, self.W_derivative)
         self.U = self.U_optimizer.update(self.U, self.U_derivative)
         self.b = self.b_optimizer.update(self.b, self.b_derivative)
-
-# import or in Layer class
-def default_weights(shape, static, limit=1):
-    n_features = shape[0]
-    n_units  = shape[1]
-    n_total  = n_features * n_units
-
-    if static:
-        # linear spaced out:
-        #     The first param is 0 & the last param is 1,
-        #     all params in between are lineared spaced out.
-        #     makes it more readable & more sparsed than randomized
-        weights = np.zeros(shape)
-        lin_spaced = np.linspace(-limit, limit, n_total)
-
-        for i in range(n_features):
-            start = i * n_units
-            end = start + n_units
-            weights[i] = lin_spaced[start:end]
-
-        # [[0.  0.2] [0.4 0.6] [0.8 1. ]]
-        return weights
-    else:
-        # random
-        limit = 1 / np.sqrt(n_features)
-        weights = np.random.uniform(-limit, limit, shape)
-
-        # [[0.50466882 0.58159532] [0.77758233 0.78466492] [0.44969037 0.5287821 ]]
-        return weights
-
-class Layer(object):
-    def __init__(self, n_units, input_shape, activation, optimizer):
-        self.n_units      = n_units
-        self.input_shape  = input_shape
-        self.output_shape = (n_units,)
-        
-        self.layer_input   = None
-        self.activation    = act_functions[activation]()
-        self.optimizer     = opt_functions[optimizer]()
 
 class Dense(Layer):
     """
@@ -749,4 +1042,6 @@ class Network2():
                 yield X[begin:end]
 
 
+
+# new design
 

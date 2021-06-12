@@ -38,6 +38,7 @@ The subsets of `Deep Learning`:
 + IPython
 + random
 + math
++ tqdm
 + signal
 + sys
 + os

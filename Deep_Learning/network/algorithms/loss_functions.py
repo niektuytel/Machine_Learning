@@ -29,30 +29,49 @@ import numpy as np # for math
 # Resources
 # https://ml-cheatsheet.readthedocs.io/en/latest/loss_functions.html
 
-
-class MeanSquareError():
-    def __call__(self, y, yhat):
-        return 0.5 * np.power((y - yhat), 2)
-    
-    def gradient(self, y, yhat):
-        return -(y - yhat)
-
-class CrossEntropy():
-    def __call__(self, y, yhat):
-        # Avoid division by zero
-        yhat = np.clip(yhat, 1e-15, 1 - 1e-15)
-        return - y * np.log(yhat) - (1 - y) * np.log(1 - yhat)
-
-    def gradient(self, y, yhat):
-        # Avoid division by zero
-        yhat = np.clip(yhat, 1e-15, 1 - 1e-15)
-        return - (y / yhat) + (1 - y) / (1 - yhat)
-
-
 def accuracy_score(y_true, y_pred):
     """ Compare y_true to y_pred and return the accuracy """
     accuracy = np.sum(y_true == y_pred, axis=0) / len(y_true)
     return accuracy
+
+class Loss(object):
+    def __call__(self, y_true, y_pred):
+        return NotImplementedError()
+
+    def gradient(self, y, y_pred):
+        raise NotImplementedError()
+
+    def acc(self, y, y_pred):
+        return 0
+
+class MeanSquareError(Loss):
+    def __call__(self, y_true, y_pred):
+        return 0.5 * np.power((y_true - y_pred), 2)
+    
+    def gradient(self, y_true, y_pred):
+        return -(y_true - y_pred)
+
+class CrossEntropy():
+    def __call__(self, y_true, y_pred):
+        # Avoid division by zero
+        y_pred = np.clip(y_pred, 1e-15, 1 - 1e-15)
+        return - y_true * np.log(y_pred) - (1 - y_true) * np.log(1 - y_pred)
+
+    def gradient(self, y_true, y_pred):
+        # Avoid division by zero
+        y_pred = np.clip(y_pred, 1e-15, 1 - 1e-15)
+        return - (y_true / y_pred) + (1 - y_true) / (1 - y_pred)
+    
+    def acc(self, y, p):
+        return accuracy_score(np.argmax(y, axis=1), np.argmax(p, axis=1))
+
+
+loss_functions = {
+    "MSE"          : MeanSquareError,
+    "CrossEntropy" : CrossEntropy
+}
+
+
 
 # class CrossEntropy():
 #     # https://machinelearningmastery.com/cross-entropy-for-machine-learning/
@@ -92,31 +111,26 @@ def accuracy_score(y_true, y_pred):
 
 
 
-loss_functions = {
-    "MSE"          : MeanSquareError,
-    "CrossEntropy" : CrossEntropy
-}
 
 
 
 
 
+# if __name__ == "__main__":    
+#     yhat = np.array(
+#         [ 
+#             [0.25,0.25,0.25,0.25], 
+#             [0.01,0.01,0.01,0.96] 
+#         ]
+#     )
+#     y = np.array(
+#         [ 
+#             [0,0,0,1], 
+#             [0,0,0,1] 
+#         ]
+#     )
 
-if __name__ == "__main__":    
-    yhat = np.array(
-        [ 
-            [0.25,0.25,0.25,0.25], 
-            [0.01,0.01,0.01,0.96] 
-        ]
-    )
-    y = np.array(
-        [ 
-            [0,0,0,1], 
-            [0,0,0,1] 
-        ]
-    )
-
-    mse = MeanSquareError()
-    print(mse.loss(yhat, y))
+#     mse = MeanSquareError()
+#     print(mse.loss(yhat, y))
 
 
