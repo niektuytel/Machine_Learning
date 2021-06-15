@@ -26,6 +26,7 @@ The subsets of `Deep Learning`:
 
 ### required imports (todo in requirements.txt)
 + sklearn
++ scikit-learn
 + pytorch
 + pytorch-lightning-bolts
 + torch

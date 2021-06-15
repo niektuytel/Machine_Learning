@@ -78,8 +78,6 @@ class Cell:
         if self.b_optimizer != None:
             self.b = self.b_optimizer.update(self.b, self.b_derivative)
 
-# layers
-
 class Layer_V2:
     """
     Layer_V2()
@@ -128,25 +126,15 @@ class Layer_V2:
         return 0
 
     def activation_name(self):
-        return self.activation.__class__.__name__
+        if self.activation is None:
+            return ""
+        else:
+            return self.activation.__class__.__name__
 
-# class Flatten(Layer_V2):
-#     def __init__(self, input_shape):
-#         self.prev_shape = None
-#         self.input_shape = None
 
-class Activation(Layer_V2):
-    """
-    Activation(activation_name="relu")
-    """
-    def layer_name(self):
-        return self.__class__.__name__
-
-    # bypass 
-    def backward_pass(self, gradient): return self.backward(gradient)
-    def forward_pass(self, X, training=True): return self.forward(X)
-    def set_input_shape(self, shape): self.inputs_shape = self.outputs_shape = shape
-
+####################################
+##   Layers that EDIT data flow   ##
+####################################
 class Dense_V2(Layer_V2):
     """
     Dense_V2(n_units=512, input_shape=(784,), activation="relu", optimizer="adam")
@@ -196,29 +184,193 @@ class Dense_V2(Layer_V2):
     def forward_pass(self, X, training=True): return self.forward(X)
     def set_input_shape(self, shape): self.inputs_shape = shape
 
-class Conv2D(Layer_V2):
-    # x = layers.Conv2D(32, 3, activation="relu", strides=2, padding="same")(encoder_inputs)
-    """ layers.Conv2D(n_filters=32, kernel_size=3, input_shape=(28, 28, 1), activation="relu", optimizer="adam", strides=2, padding="same") """
-    def __init__(self, n_filters, kernel_size, input_shape, activation, optimizer, strides=1, padding="same"):
-        self.n_filters = n_filters
-        self.kernel_size = kernel_size
-        self.input_shape = input_shape
-        self.activation = act_functions[activation]()
-        self.optimizer = opt_functions[optimizer]()
-        self.strides = strides
-        self.padding = padding
+class Activation(Layer_V2):
+    """
+    Activation(activation_name="relu")
+    """
+    def layer_name(self):
+        return self.__class__.__name__
 
-        self.cell = Cell(self.optimizer)
+    # bypass 
+    def backward_pass(self, gradient): return self.backward(gradient)
+    def forward_pass(self, X, training=True): return self.forward(X)
+    def set_input_shape(self, shape): self.inputs_shape = self.outputs_shape = shape
+
+####################################
+## Layers that MAINTAIN data flow ##
+####################################
+
+# class Input(Layer_V2):
+# class Output(Layer_V2):
+
+class Reshape(Layer_V2):
+    def __init__(self, output_shape, input_shape):
+        super().__init__()
+        self.inputs_shape = input_shape
+        self.outputs_shape = output_shape
+
+    def forward(self, X):
+        self.layer_input = X
+        return X.reshape((X.shape[0], ) + self.outputs_shape)
+        
+    def backward(self, gradient):
+        return gradient.reshape(self.layer_input.shape)
+
+    def layer_name(self):
+        return self.__class__.__name__
+
+    def parameters(self): 
+        return 0
+
+    # bypass 
+    def backward_pass(self, gradient): return self.backward(gradient)
+    def forward_pass(self, X, training=True): return self.forward(X)
+    def set_input_shape(self, shape): self.inputs_shape = shape
+
+class Flatten(Layer_V2):
+    def __init__(self, input_shape):
+        super().__init__()
+        self.inputs_shape = input_shape
+        self.outputs_shape = (np.prod(input_shape),)
+
+    def forward(self, X):
+        self.layer_input = X
+        return X.reshape((X.shape[0], -1))
+        
+    def backward(self, gradient):
+        return gradient.reshape(self.layer_input.shape)
+
+    def layer_name(self):
+        return self.__class__.__name__
+
+    def parameters(self): 
+        return 0
+
+    # bypass 
+    def backward_pass(self, gradient): return self.backward(gradient)
+    def forward_pass(self, X, training=True): return self.forward(X)
+    def set_input_shape(self, shape): self.inputs_shape = shape
+
+class Dropout(Layer_V2):
+    def __init__(self, lowest_value, input_shape):
+        super().__init__()
+        self.lowest_value = lowest_value
+        self.inputs_shape = input_shape
+        self.outputs_shape = self.inputs_shape
+
+    def forward(self, X):
+        self.layer_input = np.random.uniform(size=X.shape) > self.lowest_value
+        return X * self.layer_input
+
+    def backward(self, gradient):
+        return gradient * self.layer_input
+
+    def layer_name(self):
+        return self.__class__.__name__
+
+    def parameters(self): 
+        return 0
+        
+    # bypass 
+    def backward_pass(self, gradient): return self.backward(gradient)
+    def forward_pass(self, X, training=True): return self.forward(X)
+    def set_input_shape(self, shape): self.inputs_shape = shape
+
+class BatchNormalization(Layer_V2):
+    def __init__(self, momentum, input_shape, optimizer="adam"):
+        super().__init__()
+        self.momentum = momentum
+        self.inputs_shape = self.outputs_shape = input_shape
+        self.optimizer = opt_functions[optimizer]()
+        
+        self.epsilon = 0.01
+        self.running_mean = None
+        self.running_var = None
+
+        # initialize parameters
+        self.gamma = np.ones(self.inputs_shape[0])
+        self.beta = np.zeros(self.inputs_shape[0])
+        
+        # parameter optimizers
+        self.gamma_optimizer = copy(self.optimizer)
+        self.beta_optimizer  = copy(self.optimizer)
+
+    def forward(self, X):
+        mean = np.mean(X, axis=0)
+        var = np.var(X, axis=0)
+
+        # initialize running mean and variance if first run
+        if self.running_mean is None:
+            self.running_mean = mean
+            self.running_var = var
+
+        self.running_mean = self.momentum * self.running_mean + (1 - self.momentum) * mean
+        self.running_var = self.momentum * self.running_var + (1 - self.momentum) * var
+
+        # statistics saved for backward pass
+        self.X_centered = X - mean
+        self.stddev_inv = 1 / np.sqrt(var + self.epsilon)
+
+        X_norm = self.X_centered * self.stddev_inv
+        output = self.gamma * X_norm + self.beta
+        return output
+        
+    def backward(self, gradient):
+        # save parameters used during the forward pass
+        gamma = self.gamma
+
+        # layer update
+        X_norm = self.X_centered * self.stddev_inv
+        gradient_gamma = np.sum(gradient * X_norm, axis=0)
+        gradient_beta = np.sum(gradient, axis=0)
+
+        self.gamma = self.gamma_optimizer.update(self.gamma, gradient_gamma)
+        self.beta = self.beta_optimizer.update(self.beta, gradient_beta)
+
+        # The gradient of the loss with the respect to the layer inputs 
+        # (use weights and statistics from forward pass)
+        batch_size = gradient.shape[0]
+        gradient = (1 / batch_size) * gamma * self.stddev_inv * (batch_size * gradient - np.sum(gradient, axis=0) - self.X_centered * self.stddev_inv ** 2) * np.sum(gradient * self.X_centered, axis=0)
+        return gradient
+
+    def layer_name(self):
+        return self.__class__.__name__
+
+    def parameters(self): 
+        return np.prod(self.gamma.shape) + np.prod(self.beta.shape)
+
+    # bypass 
+    def backward_pass(self, gradient): return self.backward(gradient)
+    def forward_pass(self, X, training=True): return self.forward(X)
+    def set_input_shape(self, shape): self.inputs_shape = shape
+
+
+
+
+
+# class Conv2D(Layer_V2):
+#     # x = layers.Conv2D(32, 3, activation="relu", strides=2, padding="same")(encoder_inputs)
+#     """ layers.Conv2D(n_filters=32, kernel_size=3, input_shape=(28, 28, 1), activation="relu", optimizer="adam", strides=2, padding="same") """
+#     def __init__(self, n_filters, kernel_size, input_shape, activation, optimizer, strides=1, padding="same"):
+#         self.n_filters = n_filters
+#         self.kernel_size = kernel_size
+#         self.input_shape = input_shape
+#         self.activation = act_functions[activation]()
+#         self.optimizer = opt_functions[optimizer]()
+#         self.strides = strides
+#         self.padding = padding
+
+#         self.cell = Cell(self.optimizer)
 
         
-        # # Initialize the weights
-        # filter_height, filter_width = input_shape
-        # limit = 1 / np.sqrt(np.prod(input_shape))
-        # self.W  = np.random.uniform(-limit, limit, size=(self.n_filters, self.input_shape[0], filter_height, filter_width))
-        # self.w0 = np.zeros((self.n_filters, 1))
+#         # # Initialize the weights
+#         # filter_height, filter_width = input_shape
+#         # limit = 1 / np.sqrt(np.prod(input_shape))
+#         # self.W  = np.random.uniform(-limit, limit, size=(self.n_filters, self.input_shape[0], filter_height, filter_width))
+#         # self.w0 = np.zeros((self.n_filters, 1))
 
 
-        # self.cell.initialize(n_inputs=n_filters)
+#         # self.cell.initialize(n_inputs=n_filters)
     
 
 

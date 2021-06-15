@@ -50,13 +50,13 @@ transform = transforms.Compose([
     transforms.ToTensor()
 ])
 trainset = datasets.FashionMNIST(
-    root='../data',
+    root='../../data',
     train=True, 
     download=True,
     transform=transform
 )
 testset = datasets.FashionMNIST(
-    root='../data',
+    root='../../data',
     train=False,
     download=True,
     transform=transform
