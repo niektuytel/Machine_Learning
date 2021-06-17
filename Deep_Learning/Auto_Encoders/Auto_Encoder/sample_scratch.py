@@ -3,6 +3,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 import sys, os
 
+
+
+import 
+
 # data
 (x_train, _), (x_test, _) = mnist.load_data()
 x_train = x_train.astype('float32') / 255.

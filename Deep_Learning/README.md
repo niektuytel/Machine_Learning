@@ -16,11 +16,12 @@ The subsets of `Deep Learning`:
   - [`Recurrent Neural Network`](./Recurrent_Neural_Networks(RNNs)/Recurrent_Neural_Network(RNN)/README.md)
   - [`Long / Short Term Memory (TODO)`](./Recurrent_Neural_Networks(RNNs)/Long_Short_Term_Memory(LSTM)/README.md)
   - [`Gated Recurrent Unit (TODO)`](./Recurrent_Neural_Networks(RNNs)/Gated_Recurrent_Unit(GRU)/README.md)
-- [`Auto Encoders`](./Auto_Encoders(AEs)/README.md)  
-  - [`Auto Encoder`](./Auto_Encoders(AEs)/Auto_Encoder(Ae)/README.md)
-  - [`Variational Auto Encoder`](./Auto_Encoders(AEs)/Variational_Auto_Encoder(VAE)/README.md)
-  - [`Denoising Auto Encoder`](./Auto_Encoders(AEs)/Denoising_Auto_Encoder(DAE)/README.md)
-  - [`Parse Auto Encoder`](./Auto_Encoders(AEs)/Sparse_Auto_Encoder(SAE)/README.md)
+- [`Auto Encoders`](./Auto_Encoders/README.md)  
+  - [`Auto Encoder`](./Auto_Encoders/Auto_Encoder/README.md)
+  - [`Denoising Auto Encoder`](./Auto_Encoders/Denoising_Auto_Encoder/README.md)
+  - [`Sparse Auto Encoder`](./Auto_Encoders/Sparse_Auto_Encoder/README.md)
+  - [`Variational Auto Encoder`](./Auto_Encoders/Variational_Auto_Encoder/README.md)
+  - [`Generative Adversarial Network`](./Generative_Adversarial_Network/README.md)
 
 
 
@@ -45,7 +46,7 @@ The subsets of `Deep Learning`:
 + os
 
 <p align="center">
-  <img src="https://miro.medium.com/max/1000/1*cuTSPlTq0a_327iTPJyD-Q.png">
+  <img src="https://miro.medium.com/max/1000/1*cuTSPlTq0a_327iTPJyD-Q.png" width="750px">
 </p>
 
 ### Usefull Resources:

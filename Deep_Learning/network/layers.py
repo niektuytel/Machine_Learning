@@ -137,6 +137,8 @@ class Layer_V2:
 ####################################
 class Dense_V2(Layer_V2):
     """
+
+
     Dense_V2(n_units=512, input_shape=(784,), activation="relu", optimizer="adam")
     
     # optimizer default: "adam"
@@ -390,22 +392,59 @@ class Network_V2():
     
     def test_on_batch(self, X, y):
         y_pred = self._forward(X)
+
         loss = np.mean(self.loss_function(y, y_pred))
         acc = self.loss_function.acc(y, y_pred)
+
         return loss, acc
 
     def train_on_batch(self, X, y):
         y_pred = self._forward(X)
+
         loss = np.mean(self.loss_function(y, y_pred))
         acc = self.loss_function.acc(y, y_pred)
-
-        # Calculate the gradient of the loss function wrt y_pred
         loss_grad = self.loss_function.gradient(y, y_pred)
+        loss_grad = self._backward(loss_grad)
 
-        # Backpropagate. Update weights
-        self._backward(loss_grad, y_pred)
+        return loss, acc, loss_grad
 
-        return loss, acc
+    def _backward(self, gradient_loss, y_pred=None):
+        # update weights in each layer, bind the output to next input gradient loss
+        for layer in reversed(self.layers):
+            gradient_loss = layer.backward(gradient_loss)
+
+        return gradient_loss
+            
+    def _forward(self, X):
+        output = X
+
+        # walk through layers, bind the output to input
+        for layer in self.layers:
+            output = layer.forward(output)
+
+        return output
+
+    def summary(self, name="Model Summary"):
+        # Print model name
+        print (AsciiTable([[name]]).table)
+        # Network input shape (first layer's input shape)
+        print ("Input Shape: %s" % str(self.layers[0].input_shape()))
+        # Iterate through network and get each layer's configuration
+        table_data = [["Layer Type", "Parameters", "Output Shape", "Activation name"]]
+        tot_params = 0
+        for layer in self.layers:
+            layer_name = layer.layer_name()
+            params = layer.parameters()
+            out_shape = layer.output_shape()
+            activation_name = layer.activation_name()
+            table_data.append([layer_name, str(params), str(out_shape), str(activation_name)])
+            tot_params += params
+        # Print network configuration table
+        print (AsciiTable(table_data).table)
+        print ("Total Parameters: %d\n" % tot_params)
+
+    def predict(self, X):
+        return self._forward(X)
 
     # def fit(self, X, y, n_epochs, batch_size=64, verbose=True):
     #     history_loss = []
@@ -442,42 +481,6 @@ class Network_V2():
     #     #     print(f"\nAccuracy: {accuracy}%\n")
 
     #     return history_loss
-
-    def _backward(self, gradient_loss, y_pred):
-        # update weights in each layer, bind the output to next input gradient loss
-        for layer in reversed(self.layers):
-            gradient_loss = layer.backward(gradient_loss)
-            
-    def _forward(self, X):
-        output = X
-
-        # walk through layers, bind the output to input
-        for layer in self.layers:
-            output = layer.forward(output)
-
-        return output
-
-    def summary(self, name="Model Summary"):
-        # Print model name
-        print (AsciiTable([[name]]).table)
-        # Network input shape (first layer's input shape)
-        print ("Input Shape: %s" % str(self.layers[0].input_shape()))
-        # Iterate through network and get each layer's configuration
-        table_data = [["Layer Type", "Parameters", "Output Shape", "Activation name"]]
-        tot_params = 0
-        for layer in self.layers:
-            layer_name = layer.layer_name()
-            params = layer.parameters()
-            out_shape = layer.output_shape()
-            activation_name = layer.activation_name()
-            table_data.append([layer_name, str(params), str(out_shape), str(activation_name)])
-            tot_params += params
-        # Print network configuration table
-        print (AsciiTable(table_data).table)
-        print ("Total Parameters: %d\n" % tot_params)
-
-    def predict(self, X):
-        return self._forward(X)
 
 
 

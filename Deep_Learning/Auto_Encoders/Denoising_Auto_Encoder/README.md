@@ -9,13 +9,13 @@ Denoising autoencoders attempt to get around this risk of identity-function affi
 [`python3 sample_scratch.py`](./sample_scratch.py)  
 
 <p align="center">
-  <img src="https://miro.medium.com/max/724/1*qKiQ1noZdw8k05-YRIl6hw.jpeg">
+  <img src="https://miro.medium.com/max/724/1*qKiQ1noZdw8k05-YRIl6hw.jpeg"  width="500px">
 </p>
 <p align="center">
-  <img src="https://images.deepai.org/glossary-terms/e6f368bb361f4f40b24ccde53360f75f/denoising.png">
+  <img src="https://images.deepai.org/glossary-terms/e6f368bb361f4f40b24ccde53360f75f/denoising.png"  width="500px">
 </p>
 <p align="center">
-  <img src="https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/6eedff03-6a0e-48f5-8439-0cad8b4826c7/2b20809f-49b6-4df7-b361-a5bcd9d13ced/images/screenshot.jpg">
+  <img src="https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/6eedff03-6a0e-48f5-8439-0cad8b4826c7/2b20809f-49b6-4df7-b361-a5bcd9d13ced/images/screenshot.jpg" width="500px">
 </p>
 
 ## Usefull Resources:

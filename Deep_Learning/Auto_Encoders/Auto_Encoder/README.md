@@ -7,13 +7,13 @@ The [`Autoencoder`](https://towardsdatascience.com/deep-inside-autoencoders-7e41
 [`python3 sample_scratch.py`](./sample_scratch.py)  
 
 <p align="center">
-  <img src="https://www.oreilly.com/library/view/tensorflow-1x-deep/9781788293594/assets/7ca4c522-394e-49e6-bd32-e6679893f099.png">
+  <img src="https://www.oreilly.com/library/view/tensorflow-1x-deep/9781788293594/assets/7ca4c522-394e-49e6-bd32-e6679893f099.png"  width="500px">
 </p>
 <p align="center">
-  <img src="https://paperswithcode.com/media/methods/Autoencoder_schema.png">
+  <img src="https://paperswithcode.com/media/methods/Autoencoder_schema.png"  width="500px">
 </p>
 <p align="center">
-  <img src="https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/017c0e39-186c-4d35-b46a-cada01ccffce/83c02c60-b3b5-45c0-b915-0b8ab9ffe7e9/images/screenshot.jpg">
+  <img src="https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/017c0e39-186c-4d35-b46a-cada01ccffce/83c02c60-b3b5-45c0-b915-0b8ab9ffe7e9/images/screenshot.jpg"  width="500px">
 </p>
 
 ## Usefull Resources:

@@ -4,13 +4,16 @@
 ## code 
 [`python3 sample_keras.py`](./sample_keras.py)  
 [`python3 sample_pytorch.py`](./sample_pytorch.py)  
-[`python3 sample_scratch.py`](./sample_scratch.py)  
+<!-- [`python3 sample_scratch.py`](./sample_scratch.py) TODO  -->
 
 <p align="center">
-  <img src="https://miro.medium.com/max/576/1*79AzftDm7WcQ9OfRH5Y-6g@2x.png">
+  <img src="https://miro.medium.com/max/576/1*79AzftDm7WcQ9OfRH5Y-6g@2x.png"  width="500px">
 </p>
 <p align="center">
-  <img src="https://www.tensorflow.org/tutorials/generative/images/cvae_latent_space.jpg">
+  <img src="https://www.researchgate.net/profile/Herminarto-Nugroho/publication/340049776/figure/fig2/AS:871003378950149@1584674796011/Basic-structure-of-Variational-Autoencoder-VAE.png"  width="500px">
+</p>
+<p align="center">
+  <img src="https://www.tensorflow.org/tutorials/generative/images/cvae_latent_space.jpg" width="500px">
 </p>
 
 ## Usefull Resources:

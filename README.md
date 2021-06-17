@@ -53,6 +53,8 @@ When you need to know more about data managment:
 - https://gluon.mxnet.io/
 - https://developers.google.com/machine-learning
 - https://pub.towardsai.net/machine-learning-algorithms-for-beginners-with-python-code-examples-ml-19c6afd60daa
+- https://atcold.github.io/pytorch-Deep-Learning
+- https://www.datatechnotes.com/
 
 
 
