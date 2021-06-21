@@ -5,6 +5,13 @@ Deep learning has evolved hand-in-hand with the digital era, which has brought a
 
 However, the data, which normally is unstructured, is so vast that it could take decades for humans to comprehend it and extract relevant information. Companies realize the incredible potential that can result from unraveling this wealth of information and are increasingly adapting to AI systems for automated support.
 
+
+# Requirements 
+```python
+  # command in this folder
+  pip3 install -r "./requirements.txt"
+```
+
 (best way to learn is from top to bottom).  
 The subsets of `Deep Learning`:
 - [`Artificial Neural Networks`](./Artificial_Neural_Networks(ANNs)/README.md)  
@@ -22,28 +29,14 @@ The subsets of `Deep Learning`:
   - [`Sparse Auto Encoder`](./Auto_Encoders/Sparse_Auto_Encoder/README.md)
   - [`Variational Auto Encoder`](./Auto_Encoders/Variational_Auto_Encoder/README.md)
   - [`Generative Adversarial Network`](./Generative_Adversarial_Network/README.md)
+- [`Stochastic Neural Networks`](./Stochastic_Neural_Networks/README.md)
+  - [`Deep Belief Network`](./Stochastic_Neural_Networks/Deep_Belief_Network/README.md)
+  - [`Restricted Boltzmann Machine`](./Stochastic_Neural_Networks/Restricted_Boltzmann_Machine/README.md)
+- [`Convolution Neural Networks`](./Convolution_Neural_Networks/README.md)
+  - [`Deep Convolutional Network`](./Convolution_Neural_Networks/Deep_Convolutional_Network/README.md)
+  - [`Deep Convolutional Inverse Graphics Network`](./Convolution_Neural_Networks/Deep_Convolutional_Inverse_Graphics_Network/README.md)
+  - [`Deconvolutional Network`](./Convolution_Neural_Networks/Deconvolutional_Network/README.md)
 
-
-
-### required imports (todo in requirements.txt)
-+ sklearn
-+ scikit-learn
-+ pytorch
-+ pytorch-lightning-bolts
-+ torch
-+ torchvision
-+ keras
-+ numpy
-+ pandas
-+ seaborn
-+ matplotlib
-+ IPython
-+ random
-+ math
-+ tqdm
-+ signal
-+ sys
-+ os
 
 <p align="center">
   <img src="https://miro.medium.com/max/1000/1*cuTSPlTq0a_327iTPJyD-Q.png" width="750px">

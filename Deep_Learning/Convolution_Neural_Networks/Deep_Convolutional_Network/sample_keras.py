@@ -1,11 +1,8 @@
 import matplotlib.pyplot as plt
 from keras.datasets import mnist
-# from keras.utils import to_categorical
 from keras.utils.np_utils import to_categorical
 from keras.models import Sequential
 from keras.layers import Dense, Conv2D, Flatten
-
-
 
 # download mnist data split into train and test sets
 (X_train, y_train), (X_test, y_test) = mnist.load_data()
@@ -24,14 +21,8 @@ X_test = X_test.reshape(10000, 28, 28, 1)
 y_train = to_categorical(y_train)
 y_test = to_categorical(y_test)
 
-# print(y_train[0])
-# print(X_[0])
-
-
 # Create model
 model = Sequential()
-
-# add model layers
 model.add(Conv2D(64, kernel_size=3, activation="relu", input_shape=(28, 28, 1)))
 model.add(Conv2D(32, kernel_size=3, activation="relu"))
 model.add(Flatten())
@@ -43,9 +34,9 @@ model.compile(optimizer="adam", loss="categorical_crossentropy", metrics=["accur
 # train the model
 model.fit(X_train, y_train, validation_data=(X_test, y_test), epochs=3)
 
-#predict first 4 images in the test set
-print(model.predict(X_test[:4]))
-print(y_test[:4])
-
-
-
+# predict first 4 images in the test set
+network_predictions = model.predict(X_test[:4])
+for i, pred in enumerate(network_predictions):
+    prediction = [i for i, x in enumerate(pred) if x == max(pred)]
+    correct = [i for i, x in enumerate(y_test[i]) if x == max(y_test[i])]
+    print(f"prediction on picture {i} = {prediction}, correct answer = {correct}")

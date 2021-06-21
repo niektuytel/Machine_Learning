@@ -18,5 +18,6 @@ The subsets of `Stochastic Neural Networks`:
 ## Usefull Resources:
 + https://en.wikipedia.org/wiki/Stochastic_neural_network
 + https://link.springer.com/article/10.1007/BF01759054 
-+ 
-
++ https://github.com/mehulrastogi
++ https://github.com/mehulrastogi/Deep-Belief-Network-pytorch
++ https://github.com/wmingwei/restricted-boltzmann-machine-deep-belief-network-deep-boltzmann-machine-in-pytorch
