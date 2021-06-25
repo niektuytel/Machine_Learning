@@ -6,7 +6,7 @@
 (best way to learn is from top to bottom).  
 The subsets of `Convolution Neural Networks`:  
 - [`Deep Convolutional Network`](./Deep_Convolutional_Network/README.md)
-- [`Deep Convolutional Inverse Graphics Network`](./Deep_Convolutional_Inverse_Graphics_Network/README.md)
+<!-- - [`Deep Convolutional Inverse Graphics Network`](./Deep_Convolutional_Inverse_Graphics_Network/README.md) -->
 - [`Deconvolutional Network`](./Deconvolutional_Network/README.md)
 
 <p align="center">
@@ -26,3 +26,4 @@ The subsets of `Convolution Neural Networks`:
 + https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-convolutional-neural-networks
 + https://ujjwalkarn.me/2016/08/11/intuitive-explanation-convnets/
 + https://towardsdatascience.com/convolutional-neural-networks-explained-9cc5188c4939
++ https://towardsdatascience.com/visualizing-convolution-neural-networks-using-pytorch-3dfa8443e74e (use incognito)

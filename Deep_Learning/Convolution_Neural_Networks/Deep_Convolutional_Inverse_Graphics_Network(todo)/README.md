@@ -19,6 +19,8 @@ As for popular applications of deep convolutional inverse graphics networks, the
 </p>
 
 ## Usefull Resources:
++ https://towardsdatascience.com/differentiable-programming-inverse-graphics-autoencoder-e1b0fabe67bf (use incognito)
 + http://primo.ai/index.php?title=Deconvolutional_Neural_Network_(DN)_/_Inverse_Graphics_Network_(IGN)
 + http://willwhitney.com/dc-ign/www/
 + https://proceedings.neurips.cc/paper/2015/file/ced556cd9f9c0c8315cfbe0744a3baf0-Paper.pdf
++ https://arxiv.org/abs/1503.03167
