@@ -5,7 +5,7 @@ In all the forms of learning we have met so far the answer that the network is s
 
 ## code 
 <!-- [`python3 sample_keras.py`](./sample_keras.py)       -->
-<!-- [`python3 sample_pytorch.py`](./sample_pytorch.py)   -->
+[`python3 sample_pytorch.py`](./sample_pytorch.py)  
 <!-- [`python3 sample_scratch.py`](./sample_scratch.py)   -->
 
 <p align="center">
@@ -23,3 +23,4 @@ In all the forms of learning we have met so far the answer that the network is s
 + https://page.mi.fu-berlin.de/rojas/neural/chapter/K15.pdf
 + https://towardsdatascience.com/kohonen-self-organizing-maps-a29040d688da (use incognito)
 + https://github.com/EklavyaFCB/EMNIST-Kohonen-SOM
++ https://codesachin.wordpress.com/2015/11/28/self-organizing-maps-with-googles-tensorflow/

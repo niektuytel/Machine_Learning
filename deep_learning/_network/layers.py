@@ -135,8 +135,13 @@ class Layer_V2():
 ####################################
 ##   Layers that EDIT data flow   ##
 ####################################
+
 class Dense_V2(Layer_V2):
+    # used by:
+    # ../artificial_neural_networks/perceptron/sample_scratch.py
+    # ../artificial_neural_networks/feed_forward/sample_scratch.py
     """
+    ```python
     Dense_V2(n_units=512, input_shape=(784,), activation="relu", optimizer="adam")
     
     # optimizer default: "adam"
@@ -147,6 +152,26 @@ class Dense_V2(Layer_V2):
 
     # only on: network.add(...)
     Dense_V2(n_units=512)
+    ```
+
+    some text explaining maybe
+
+
+    ## Params:
+    ```txt
+        n_units: int
+            Number of units that is been used. 
+            Number of outputs from this layer.\n
+        
+        input_shape: (int,)
+            Amount of data inputs.\n
+        
+        activation: string=None
+            When defined it activates the summed input.\n
+
+        optimizer: string="adam"
+            The type of learning to bring the prediction closer to the correct output
+    ```
     """
     def __init__(self, n_units, input_shape, activation=None, optimizer="adam"):
         super().__init__(n_units, input_shape, activation, optimizer)
@@ -355,6 +380,11 @@ class Activation(Layer_V2):
         return self.__class__.__name__
 
 
+class Perceptron(Dense_V2): pass # https://stackoverflow.com/questions/43755293/what-does-dense-do
+class Neuron(Dense_V2):     pass # https://ml-cheatsheet.readthedocs.io/en/latest/nn_concepts.html
+class Node(Dense_V2):       pass # https://orbograph.com/understanding-ai-what-is-a-deep-learning-node/
+class Unit(Dense_V2):       pass # https://cs231n.github.io/neural-networks-1/
+
 
 ####################################
 ## Layers that MAINTAIN data flow ##
@@ -510,6 +540,26 @@ class BatchNormalization(Layer_V2):
 ##            Network             ##
 ####################################
 class Network_V2():
+    # used by:
+    # ../artificial_neural_networks/perceptron/sample_scratch.py
+    # ../artificial_neural_networks/feed_forward/sample_scratch.py
+    """
+    ```python
+    Network_V2(loss_name="CrossEntropy")
+
+    # loss_name default: "MSE"
+    Network_V2() 
+    ```
+
+    some text explaining maybe
+
+
+    ## Params:
+    ```txt
+        loss_name: string
+            Function to calculate the distance between `network output & correct output`\n
+    ```
+    """
     def __init__(self, loss_name="MSE"):
         self.layers = []
         self.loss_function = loss_functions[loss_name]()
@@ -577,7 +627,7 @@ class Network_V2():
     def predict(self, X):
         return self._forward(X)
 
-    def fit(self, X, y, n_epochs, batch_size):
+    def fit(self, X, y, n_epochs, batch_size=1):
         loss_history = []
         accuracy = 0.00
 

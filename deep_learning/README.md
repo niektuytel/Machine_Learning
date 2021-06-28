@@ -6,22 +6,26 @@
 However, the data, which normally is unstructured, is so vast that it could take decades for humans to comprehend it and extract relevant information. Companies realize the incredible potential that can result from unraveling this wealth of information and are increasingly adapting to `AI` systems for automated support.
 
 # Subsets of `Deep Learning`:
-##### best way is to learn is from `TOP` to `BOTTOM`.
-- [`Artificial Neural Networks`](./Artificial_Neural_Networks(ANNs)/README.md)  
-  - [`Perceptron`](./Artificial_Neural_Networks(ANNs)/Perceptron(P)/README.md)  
-  - [`Feed Forward`](./Artificial_Neural_Networks(ANNs)/Feed_Forward(FF)/README.md)
-  - [`Radial Basis Network`](./Artificial_Neural_Networks(ANNs)/Radial_Basis_Network(RBF)/README.md)
-  - [`Deep Feed Forward`](./Artificial_Neural_Networks(ANNs)/Deep_Feed_Forward(DFF)/README.md)
+##### best way is to learn is from `TOP` to `BOTTOM`.  
++ [`Artificial Neural Networks`](./artificial_neural_networks/README.md)  
+  + [`Perceptron`](./artificial_neural_networks/perceptron/README.md)  
+  + [`Feed Forward`](./artificial_neural_networks/feed_forward/README.md)  
+  + [`Radial Basis Network`](./artificial_neural_networks/radial_basis_network/README.md)  
+  + [`Deep Feed Forward`](./artificial_neural_networks/deep_feed_forward/README.md)  
+
+
+
+
 - [`Recurrent Neural Networks`](./Recurrent_Neural_Networks(RNNs)/README.md)  
   - [`Recurrent Neural Network`](./Recurrent_Neural_Networks(RNNs)/Recurrent_Neural_Network(RNN)/README.md)
   - [`Long / Short Term Memory`](./Recurrent_Neural_Networks(RNNs)/Long_Short_Term_Memory(LSTM)/README.md)
   - [`Gated Recurrent Unit`](./Recurrent_Neural_Networks(RNNs)/Gated_Recurrent_Unit(GRU)/README.md)
-- [`Auto Encoders`](./Auto_Encoders/README.md)  
-  - [`Auto Encoder`](./Auto_Encoders/Auto_Encoder/README.md)
-  - [`Denoising Auto Encoder`](./Auto_Encoders/Denoising_Auto_Encoder/README.md)
-  - [`Sparse Auto Encoder`](./Auto_Encoders/Sparse_Auto_Encoder/README.md)
-  - [`Variational Auto Encoder`](./Auto_Encoders/Variational_Auto_Encoder/README.md)
-  - [`Generative Adversarial Network`](./Generative_Adversarial_Network/README.md)
++ [`Auto Encoders`](./Auto_Encoders/README.md)  
+  + [`Auto Encoder`](./Auto_Encoders/Auto_Encoder/README.md)
+  + [`Denoising Auto Encoder`](./Auto_Encoders/Denoising_Auto_Encoder/README.md)
+  + [`Sparse Auto Encoder`](./Auto_Encoders/Sparse_Auto_Encoder/README.md)
+  + [`Variational Auto Encoder`](./Auto_Encoders/Variational_Auto_Encoder/README.md)
+  + [`Generative Adversarial Network`](./Generative_Adversarial_Network/README.md)
 - [`Stochastic Neural Networks`](./Stochastic_Neural_Networks/README.md)
   - [`Deep Belief Network`](./Stochastic_Neural_Networks/Deep_Belief_Network/README.md)
   - [`Restricted Boltzmann Machine`](./Stochastic_Neural_Networks/Restricted_Boltzmann_Machine/README.md)
@@ -45,12 +49,13 @@ However, the data, which normally is unstructured, is so vast that it could take
 </p>
 
 ### Informative Resources:
-+ [`explain why deep learning exists nor been used.`](https://www.investopedia.com/terms/d/deep-learning.asp#:~:text=Deep%20learning%20is%20a%20subset,learning%20or%20deep%20neural%20network.)
-+ https://machinelearningmastery.com/keras-functional-api-deep-learning/
-+ https://www.youtube.com/watch?v=IN2XmBhILt4&list=RDCMUCtYLUTtgS3k1Fg4y5tAhLbw&index=1
++ https://www.deeplearningwizard.com/
 + https://pub.towardsai.net/whirlwind-tour-of-rnns-a11effb7808f
++ https://machinelearningmastery.com/keras-functional-api-deep-learning/
 + http://www.wildml.com/2015/09/recurrent-neural-networks-tutorial-part-1-introduction-to-rnns/
 + https://jramapuram.github.io/ramblings/rnn-backrpop/
++ [`explain why deep learning exists nor been used.`](https://www.investopedia.com/terms/d/deep-learning.asp#:~:text=Deep%20learning%20is%20a%20subset,learning%20or%20deep%20neural%20network.)
++ https://www.youtube.com/watch?v=IN2XmBhILt4&list=RDCMUCtYLUTtgS3k1Fg4y5tAhLbw&index=1
 + https://pytorch.org/tutorials/beginner/pytorch_with_examples.html
 + https://paperswithcode.com/method/denoising-autoencoder
 + https://www.simplilearn.com/tutorials/deep-learning-tutorial/deep-learning-algorithm
