@@ -5,20 +5,20 @@ Like many other deep learning algorithms, recurrent neural networks are relative
 
 Because of their internal memory, RNN’s can remember important things about the input they received, which allows them to be very precise in predicting what’s coming next. This is why they're the preferred algorithm for sequential data like time series, speech, text, financial data, audio, video, weather and much more. Recurrent neural networks can form a much deeper understanding of a sequence and its context compared to other algorithms.
 
-# Subsets of `Recurrent Neural Networks`:
+## Subsets of `Recurrent Neural Networks`:
 ##### best way is to learn is from `TOP` to `BOTTOM`.
 - [`Recurrent Neural Network`](./recurrent_neural_network)
-- [`Long / Short Term Memory (TODO backprop)`](./Long_Short_Term_Memory(LSTM))
-- [`Gated Recurrent Unit (TODO backprop)`](./Gated_Recurrent_Unit(GRU))
+- [`Long Short Term Memory`](./long_short_term_memory)
+- [`Gated Recurrent Unit`](./gated_recurrent_unit)
 
 <p align="center">
-  <img src="https://camo.githubusercontent.com/61cd232998541a3dd8e3b72bd25035940f373c1a4bd745fbe68e6424345adcb2/68747470733a2f2f692e737461636b2e696d6775722e636f6d2f62347375732e6a7067">
+  <img src="https://camo.githubusercontent.com/61cd232998541a3dd8e3b72bd25035940f373c1a4bd745fbe68e6424345adcb2/68747470733a2f2f692e737461636b2e696d6775722e636f6d2f62347375732e6a7067" width="500px">
 </p>
 <p align="center">
-  <img src="https://miro.medium.com/max/3378/1*LNVsKOvftmxCTrM5vJOCEA.png">
+  <img src="https://miro.medium.com/max/3378/1*LNVsKOvftmxCTrM5vJOCEA.png" width="500px">
 </p>
 <p align="center">
-  <img src="http://www.wildml.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-16-at-2.21.51-PM.png">
+  <img src="http://www.wildml.com/wp-content/uploads/2015/09/Screen-Shot-2015-09-16-at-2.21.51-PM.png" width="500px">
 </p>
 
 ## Usefull Resources:

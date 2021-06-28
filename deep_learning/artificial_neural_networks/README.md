@@ -9,7 +9,7 @@ The first time you set white paint in the filter, than you check is the outcomin
 When you have more filters we can interact on different colors. When we set filters after the output of a filter we can make the filter more flexible when they all have there unique filtering thinkned on the color.
 This makes it dynamic in in filtering very specific things.  
 
-# Subsets of `Artificial Neural Networks`:
+## Subsets of `Artificial Neural Networks`:
 ##### best way is to learn is from `TOP` to `BOTTOM`.
 - [`Perceptron`](./perceptron/README.md)  
 - [`Feed Forward`](./feed_forward/README.md)

@@ -11,15 +11,18 @@ However, the data, which normally is unstructured, is so vast that it could take
   + [`Perceptron`](./artificial_neural_networks/perceptron/README.md)  
   + [`Feed Forward`](./artificial_neural_networks/feed_forward/README.md)  
   + [`Radial Basis Network`](./artificial_neural_networks/radial_basis_network/README.md)  
-  + [`Deep Feed Forward`](./artificial_neural_networks/deep_feed_forward/README.md)  
+  + [`Deep Feed Forward`](./artificial_neural_networks/deep_feed_forward/README.md)
+
+- [`Recurrent Neural Networks`](./recurrent_neural_networks/README.md)  
+  - [`Recurrent Neural Network`](./recurrent_neural_networks/recurrent_neural_network/README.md)
+  - [`Long Short Term Memory`](./recurrent_neural_networks/long_short_term_memory/README.md)
+  - [`Gated Recurrent Unit`](./recurrent_neural_networks/gated_recurrent_unit/README.md)  
 
 
 
 
-- [`Recurrent Neural Networks`](./Recurrent_Neural_Networks(RNNs)/README.md)  
-  - [`Recurrent Neural Network`](./Recurrent_Neural_Networks(RNNs)/Recurrent_Neural_Network(RNN)/README.md)
-  - [`Long / Short Term Memory`](./Recurrent_Neural_Networks(RNNs)/Long_Short_Term_Memory(LSTM)/README.md)
-  - [`Gated Recurrent Unit`](./Recurrent_Neural_Networks(RNNs)/Gated_Recurrent_Unit(GRU)/README.md)
+
+
 + [`Auto Encoders`](./Auto_Encoders/README.md)  
   + [`Auto Encoder`](./Auto_Encoders/Auto_Encoder/README.md)
   + [`Denoising Auto Encoder`](./Auto_Encoders/Denoising_Auto_Encoder/README.md)
