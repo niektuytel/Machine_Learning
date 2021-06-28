@@ -5,9 +5,9 @@ Like many other deep learning algorithms, recurrent neural networks are relative
 
 Because of their internal memory, RNN’s can remember important things about the input they received, which allows them to be very precise in predicting what’s coming next. This is why they're the preferred algorithm for sequential data like time series, speech, text, financial data, audio, video, weather and much more. Recurrent neural networks can form a much deeper understanding of a sequence and its context compared to other algorithms.
 
-(best way to learn is from top to bottom).  
-The subsets of `Recurrent Neural Networks`:
-- [`Recurrent Neural Network`](./Recurrent_Neural_Network(RNN))
+# Subsets of `Recurrent Neural Networks`:
+##### best way is to learn is from `TOP` to `BOTTOM`.
+- [`Recurrent Neural Network`](./recurrent_neural_network)
 - [`Long / Short Term Memory (TODO backprop)`](./Long_Short_Term_Memory(LSTM))
 - [`Gated Recurrent Unit (TODO backprop)`](./Gated_Recurrent_Unit(GRU))
 
