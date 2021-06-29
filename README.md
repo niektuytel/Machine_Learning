@@ -1,13 +1,8 @@
 # Machine Learing (ML)
-The perpose of this repo to get a easy understanding how to use `ML` with libraries.  
-As well the way it works from scratch, so we know what is going on.
+`Machine learning` is an application of artificial intelligence (`AI`) that provides systems the ability to automatically learn and improve from experience without being explicitly programmed.
+`Machine learning` focuses on the development of computer programs that can access data and use it to learn for themselves.  
 
-Machine learning is an application of artificial intelligence (AI) that provides systems the ability to automatically learn and improve from experience without being explicitly programmed.  
-Machine learning focuses on the development of computer programs that can access data and use it to learn for themselves.
-
-To start understanding all the Machine Learning algorithms,  
-you must get the basic understanding
-of `Calculus` and `Linear Algebra`.  
+To start understanding most of the `Machine Learning` algorithms, you must get the basic understanding of `Calculus` and `Linear Algebra`.  
 + [`Linear Algebra`](https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&index=1)
 + [`Calculus`](https://www.youtube.com/watch?v=WUvTyaaNkzM&list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr&index=1)
 + [`Derivatives exersices`](http://derivative-functions.cours-de-math.eu/exercises-derivative-basic.php)  
@@ -23,31 +18,27 @@ of `Calculus` and `Linear Algebra`.
   pip3 install -r "./requirements.txt"
 ```
 
-# Subsets of `Machine Learning`:
-+ [`Deep Learning`](./deep_learning/README.md)  
+## Subsets of `Machine Learning`:
++ [`Deep Learning`](./deep_learning/README.md) 
++ [`Supervised Learning`](./supervised_learning/README.md)
++ [`UnSupervised Learning`](./unsupervised_learning/README.md)
++ [`Reinforcement Learning`](./reinforcement_learning/README.md)
 
 
-
-[`Supervised Learning`](./Supervised_Learning(SL))`, `
-[`Unsupervised Learning `](./Unsupervised_Learning(UL))` and `
-[`Reinforcement Learning`](./Reinforcement_Learning(RL))  
-are subsets of `Machine Learning` that contains algorithms to use on specific tasks.  
-`Deep Learning` is a subset of machine learning networks capable of learning  
-unsupervised from data that is unstructured or unlabeled.  
-
-The best step to get started is trough [`Deep Learning`](./Deep_Learning(DL)).  
-The reason is that you will understand more the purpose of the algorithms  
-and when to use different types of algorithms.  
-
-When there is a clear understanding how  [`Deep Learning`](./Deep_Learning(DL)) is working nor used on data,  
-[`Supervised Learning`](./Supervised_Learning(SL))`, `
-[`Unsupervised Learning `](./Unsupervised_Learning(UL))` and `
-[`Reinforcement Learning`](./Reinforcement_Learning(RL))  
-are understandable as well.
+When there is a clear understanding how  [`Deep Learning`](./deep_learning/README.md) is working nor used on data [`Supervised Learning`](./supervised_learning/README.md)`, ` [`Unsupervised Learning `](./unsupervised_learning/README.md)` and ` [`Reinforcement Learning`](./reinforcement_learning/README.md) are understandable as well.
 
 If you are a beginner in Machine Learning:  
 - [Machine Learning by Google](https://developers.google.com/machine-learning)
 - [Machine Learning by scikit-learn](https://scikit-learn.org/stable/)  
+
+
+
+<!-- `Deep Learning` is a subset of machine learning networks capable of learning (un)supervised from data that is unstructured or unlabeled.   -->
+
+<!-- The best step to get started is trough [`Deep Learning`](./Deep_Learning(DL)).  
+The reason is that you will understand more the purpose of the algorithms  
+and when to use different types of algorithms.   -->
+
 
 When you need to know more about data managment:  
 + https://machinelearningmastery.com/use-different-batch-sizes-training-predicting-python-keras/  
@@ -62,7 +53,7 @@ When you need to know more about data managment:
     <img src="https://miro.medium.com/max/2056/1*3Q6BVdxVdcZgJXSRy2tqmg.png">
 </p>  
 
-### Usefull Resources:
+# Usefull Resources:
 - https://gluon.mxnet.io/
 - https://developers.google.com/machine-learning
 - https://pub.towardsai.net/machine-learning-algorithms-for-beginners-with-python-code-examples-ml-19c6afd60daa
