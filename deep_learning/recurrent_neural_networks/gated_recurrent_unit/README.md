@@ -7,7 +7,7 @@ Now that you’ve seen two models  to combat the vanishing gradient problem you 
 ## code 
 [`python3 sample_keras.py`](./sample_keras.py)  
 [`python3 sample_pytorch.py`](./sample_pytorch.py)  
-[`python3 sample_scratch.py`](./sample_scratch.py)  
+<!-- [`python3 sample_scratch.py`](./sample_scratch.py)   -->
 
 <p align="center">
   <img src="https://miro.medium.com/max/3032/1*yBXV9o5q7L_CvY7quJt3WQ.png" width="750">

@@ -16,32 +16,30 @@ However, the data, which normally is unstructured, is so vast that it could take
 - [`Recurrent Neural Networks`](./recurrent_neural_networks/README.md)  
   - [`Recurrent Neural Network`](./recurrent_neural_networks/recurrent_neural_network/README.md)
   - [`Long Short Term Memory`](./recurrent_neural_networks/long_short_term_memory/README.md)
-  - [`Gated Recurrent Unit`](./recurrent_neural_networks/gated_recurrent_unit/README.md)  
+  - [`Gated Recurrent Unit`](./recurrent_neural_networks/gated_recurrent_unit/README.md)
 
++ [`Auto Encoders`](./auto_encoders/README.md)  
+  + [`Auto Encoder`](./autoencoders/autoencoder/README.md)
+  + [`Denoising Auto Encoder`](./autoencoders/denoising_autoencoder/README.md)
+  + [`Sparse Auto Encoder`](./autoencoders/sparse_autoencoder/README.md)
+  + [`Variational Auto Encoder`](./autoencoders/variational_autoencoder/README.md)
+  + [`Generative Adversarial Network`](./autoencoders/generative_adversarial_network/README.md)
 
+- [`Convolution Neural Networks`](./convolution_neural_networks/README.md)  
+  - [`Deep Convolutional Network`](./convolution_neural_networks/deep_vonvolutional_network/README.md)  
+  - [`Deep Convolutional Inverse Graphics Network`](./convolution_neural_networks/deep_convolutional_inverse_graphics_network/README.md)  
+  - [`Deconvolutional Network`](./convolution_neural_networks/deconvolutional_network/README.md)  
+  
++ [`Stochastic Neural Networks`](./stochastic_neural_networks/README.md)
+  + [`Deep Belief Network`](./stochastic_neural_networks/deep_belief_network/README.md)
+  + [`Restricted Boltzmann Machine`](./stochastic_neural_networks/restricted_boltzmann_machine/README.md)
 
-
-
-
-+ [`Auto Encoders`](./Auto_Encoders/README.md)  
-  + [`Auto Encoder`](./Auto_Encoders/Auto_Encoder/README.md)
-  + [`Denoising Auto Encoder`](./Auto_Encoders/Denoising_Auto_Encoder/README.md)
-  + [`Sparse Auto Encoder`](./Auto_Encoders/Sparse_Auto_Encoder/README.md)
-  + [`Variational Auto Encoder`](./Auto_Encoders/Variational_Auto_Encoder/README.md)
-  + [`Generative Adversarial Network`](./Generative_Adversarial_Network/README.md)
-- [`Stochastic Neural Networks`](./Stochastic_Neural_Networks/README.md)
-  - [`Deep Belief Network`](./Stochastic_Neural_Networks/Deep_Belief_Network/README.md)
-  - [`Restricted Boltzmann Machine`](./Stochastic_Neural_Networks/Restricted_Boltzmann_Machine/README.md)
-- [`Convolution Neural Networks`](./Convolution_Neural_Networks/README.md)
-  - [`Deep Convolutional Network`](./Convolution_Neural_Networks/Deep_Convolutional_Network/README.md)
-  <!-- - [`Deep Convolutional Inverse Graphics Network`](./Convolution_Neural_Networks/Deep_Convolutional_Inverse_Graphics_Network/README.md) -->
-  - [`Deconvolutional Network`](./Convolution_Neural_Networks/Deconvolutional_Network/README.md)
 - [`Reservoir Computing`](./Reservoir_Computing/README.md)
   - [`Liquid State Machine`](./Reservoir_Computing/Liquid_State_Machine/README.md)
   - [`Extreme Learning Machine`](./Reservoir_Computing/Extreme_Learning_Machine/README.md)
   - [`Echo State Network`](./Reservoir_Computing/Echo_State_Network/README.md)
   - [`Reservoir Computing`](./Reservoir_Computing/README.md)
-- `Ungrouped Networks`
++ `Ungrouped Networks`
   - [`Deep Residual Network`](./Ungrouped_Networks/Deep_Residual_Network/README.md)  
   - [`Kohonen Network`](./Ungrouped_Networks/Kohonen_Network/README.md)  
   - [`Support Vector Machine`](./Ungrouped_Networks/Support_Vector_Machine/README.md)  
@@ -57,7 +55,7 @@ However, the data, which normally is unstructured, is so vast that it could take
 + https://machinelearningmastery.com/keras-functional-api-deep-learning/
 + http://www.wildml.com/2015/09/recurrent-neural-networks-tutorial-part-1-introduction-to-rnns/
 + https://jramapuram.github.io/ramblings/rnn-backrpop/
-+ [`explain why deep learning exists nor been used.`](https://www.investopedia.com/terms/d/deep-learning.asp#:~:text=Deep%20learning%20is%20a%20subset,learning%20or%20deep%20neural%20network.)
++ [`why deep learning exists nor been used?`](https://www.investopedia.com/terms/d/deep-learning.asp#:~:text=Deep%20learning%20is%20a%20subset,learning%20or%20deep%20neural%20network.)
 + https://www.youtube.com/watch?v=IN2XmBhILt4&list=RDCMUCtYLUTtgS3k1Fg4y5tAhLbw&index=1
 + https://pytorch.org/tutorials/beginner/pytorch_with_examples.html
 + https://paperswithcode.com/method/denoising-autoencoder

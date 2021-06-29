@@ -5,7 +5,7 @@ Capable of learning long-term dependencies. Designed to avoid the long-term depe
 ## code 
 [`python3 sample_keras.py`](./sample_keras.py)  
 [`python3 sample_pytorch.py`](./sample_pytorch.py)  
-[`python3 sample_scratch.py`](./sample_scratch.py)  
+<!-- [`python3 sample_scratch.py`](./sample_scratch.py)   -->
 
 <p align="center">
   <img src="https://hackernoon.com/hn-images/1*g4jsLedfzsSFtuqVCfQXsw.png" width="750">

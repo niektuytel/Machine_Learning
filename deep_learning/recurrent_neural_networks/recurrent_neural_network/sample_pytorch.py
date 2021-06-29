@@ -7,25 +7,9 @@ import numpy as np
 import math, random
 import matplotlib.pyplot as plt
 
-# generating a noisy multi-sin wave data
-def sine_2(X, signal_freq=60.):
-    return (np.sin(2 * np.pi * (X) / signal_freq) + np.sin(4 * np.pi * (X) / signal_freq)) / 2.0
-
-def noisy(Y, noise_range=(-0.05, 0.05)):
-    noise = np.random.uniform(noise_range[0], noise_range[1], size=Y.shape)
-    return Y + noise
-
-def sample(sample_size):
-    random_offset = random.randint(0, sample_size)
-    X = sine_2(np.arange(sample_size) + random_offset)
-    Y = noisy(X)
-
-    data = lambda data: np.array([data[0:10], data[10:20], data[20:30], data[30:40], data[40:50]], dtype=np.double)
-    return Variable(torch.from_numpy(data(X)).unsqueeze(2)), Variable(torch.from_numpy(data(Y)).unsqueeze(2).float())
-
-class RNN(nn.Module):
+class Network(nn.Module):
     def __init__(self, hidden_size, n_layers, batch_size):
-        super(RNN, self).__init__()
+        super(Network, self).__init__()
         self.hidden_size = hidden_size
         self.n_layers = n_layers
         self.batch_size = batch_size
@@ -47,39 +31,62 @@ class RNN(nn.Module):
        hidden = torch.zeros(self.n_layers, self.batch_size, self.hidden_size, dtype=torch.float64)
        return hidden
 
+# generating a noisy multi-sin wave data
+def sine_2(X, signal_freq=60.):
+    return (np.sin(2 * np.pi * (X) / signal_freq) + np.sin(4 * np.pi * (X) / signal_freq)) / 2.0
+
+def noisy(Y, noise_range=(-0.05, 0.05)):
+    noise = np.random.uniform(noise_range[0], noise_range[1], size=Y.shape)
+    return Y + noise
+
+def sample(sample_size):
+    random_offset = random.randint(0, sample_size)
+    X = sine_2(np.arange(sample_size) + random_offset)
+    Y = noisy(X)
+
+    data = lambda data: np.array([data[0:10], data[10:20], data[20:30], data[30:40], data[40:50]], dtype=np.double)
+    return Variable(torch.from_numpy(data(X)).unsqueeze(2)), Variable(torch.from_numpy(data(Y)).unsqueeze(2).float())
+
+def generate_data(batch_size, amount=50):
+    dataset = [ sample(batch_size) for i in range(amount) ]
+    return dataset
+
+
 n_epochs = 100
-n_truncate = 50
 batch_size = 50
 seq_size = 10
 
+# data
+dataset = generate_data(batch_size)
+
+
+
 # define model
-network = RNN(hidden_size=1, n_layers=2, batch_size=int(batch_size / seq_size))
+network = Network(hidden_size=1, n_layers=2, batch_size=int(batch_size / seq_size))
 optimizer = optim.SGD(network.parameters(), lr=0.01)
 loss_function = nn.MSELoss()
 loss_history = np.zeros(n_epochs)
 
 # train network
 for epoch in range(n_epochs):
-    for iter in range(n_truncate):
+    for i, data in enumerate(dataset):
+        x_train, y_train = data
         optimizer.zero_grad()
-        X, y = sample(batch_size)
-        # print(f"X:{X.shape}, Y:{y.shape}")
+
+        outputs, hidden = network(x_train.double(), None)
         
-        # Use teacher forcing 50% of the time
-        # force = random.random() < 0.5
-        outputs, hidden = network(X.double(), None)
-        loss = loss_function(outputs, y)
+        loss = loss_function(outputs, y_train)
         loss_history[epoch] += loss
         loss.backward()
         optimizer.step()
 
-        if iter % 10 == 0:
+        if i % 10 == 0:
             plt.clf();
             plt.ion()
             plt.title(F"[{epoch}/{n_epochs}] loss:%.2f" % loss)
             plt.plot(torch.flatten(outputs.detach()),'r-',linewidth=1,label='Output')
-            plt.plot(torch.flatten(y),'c-',linewidth=1,label='Label')
-            plt.plot(torch.flatten(X),'g-',linewidth=1,label='Input')
+            plt.plot(torch.flatten(y_train),'c-',linewidth=1,label='Label')
+            plt.plot(torch.flatten(x_train),'g-',linewidth=1,label='Input')
             plt.draw();
             plt.pause(0.05);
 
