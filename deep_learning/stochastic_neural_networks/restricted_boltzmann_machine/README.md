@@ -14,7 +14,7 @@ The reason i mentioned this stucture is to get the gasph around it, maybe in the
 # Code 
 [`python3 sample_scratch.py`](./sample_scratch.py)  
 [`python3 sample_pytorch.py`](./sample_pytorch.py)  
-<!-- [`python3 sample_keras.py`](./sample_keras.py) (todo) -->
+<!-- [`python3 sample_keras.py`](./sample_keras.py) -->
 
 <p align="center">
   <img src="https://lh4.googleusercontent.com/3dzBOOhDdpxw4EPbt9viT-A8ONmqgrqF61pJs6M7Jpn-LIQUDalZ4vpYg0e9XpPlB6y78H40Ws9NSdxCdpRdb9m3mY1t_FxcnQrEodGzdmPjBW7C4jM0Oz6GeI48Jz_dqQJwr7h_SlVr14VPTw"  width="500px">

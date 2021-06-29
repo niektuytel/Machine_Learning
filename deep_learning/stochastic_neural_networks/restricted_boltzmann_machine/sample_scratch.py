@@ -1,9 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from keras.datasets import mnist
+from tensorflow.keras.datasets import mnist
 import sys, os
 
-sys.path.insert(1, os.getcwd() + "./../../network")
+sys.path.insert(1, os.getcwd() + "./../../_network")
 from algorithms.activation_functions import act_functions
 
 def batch_iterator(X, y=None, batch_size=64):
@@ -67,7 +67,7 @@ class RBM():
 
     def save_image(self, epoch, X):
         # predict random image
-        idx = np.random.choice(range(X.shape[0]), batch_size)
+        idx = np.random.choice(range(X.shape[0]), 100)
         image = self.predict(self.predict(X[idx]))
 
         # Plot the images during the last iteration

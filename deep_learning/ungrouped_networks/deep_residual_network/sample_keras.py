@@ -1,34 +1,14 @@
-"""
-Clean and simple Keras implementation of network architectures described in:
-    - (ResNet-50) [Deep Residual Learning for Image Recognition](https://arxiv.org/pdf/1512.03385.pdf).
-    - (ResNeXt-50 32x4d) [Aggregated Residual Transformations for Deep Neural Networks](https://arxiv.org/pdf/1611.05431.pdf).
-    
-Python 3.
-"""
-
 from tensorflow.keras import layers
 from tensorflow.keras import models
-
-
-#
-# image dimensions
-#
 
 img_height = 224
 img_width = 224
 img_channels = 3
-
-#
-# network params
-#
-
 cardinality = 32
-
 
 def residual_network(x):
     """
-    ResNeXt by default. For ResNet set `cardinality` = 1 above.
-    
+    ResNeXt by default. For ResNet set `cardinality` = 1 above.    
     """
     def add_common_layers(y):
         y = layers.BatchNormalization()(y)

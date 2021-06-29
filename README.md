@@ -15,7 +15,6 @@ of `Calculus` and `Linear Algebra`.
 + [`Partial Derivatives`](https://www.youtube.com/watch?v=p_di4Zn4wz4&list=PLZHQObOWTQDNPOjrT6KVlfJuKtYTftqH6&index=1)  
 + [`Partial Derivatives exersices`](https://www.youtube.com/watch?v=JAf_aSIJryg) 
 
-
 # Requirements 
 ```python
   # (required to have programming knowledge)
@@ -23,6 +22,12 @@ of `Calculus` and `Linear Algebra`.
   # 2 - paste line below & press enter.
   pip3 install -r "./requirements.txt"
 ```
+
+# Subsets of `Machine Learning`:
++ [`Deep Learning`](./deep_learning/README.md)  
+
+
+
 [`Supervised Learning`](./Supervised_Learning(SL))`, `
 [`Unsupervised Learning `](./Unsupervised_Learning(UL))` and `
 [`Reinforcement Learning`](./Reinforcement_Learning(RL))  

@@ -5,7 +5,7 @@
 
 However, the data, which normally is unstructured, is so vast that it could take decades for humans to comprehend it and extract relevant information. Companies realize the incredible potential that can result from unraveling this wealth of information and are increasingly adapting to `AI` systems for automated support.
 
-# Subsets of `Deep Learning`:
+## Subsets of `Deep Learning`:
 ##### best way is to learn is from `TOP` to `BOTTOM`.  
 + [`Artificial Neural Networks`](./artificial_neural_networks/README.md)  
   + [`Perceptron`](./artificial_neural_networks/perceptron/README.md)  
@@ -34,16 +34,16 @@ However, the data, which normally is unstructured, is so vast that it could take
   + [`Deep Belief Network`](./stochastic_neural_networks/deep_belief_network/README.md)
   + [`Restricted Boltzmann Machine`](./stochastic_neural_networks/restricted_boltzmann_machine/README.md)
 
-- [`Reservoir Computing`](./Reservoir_Computing/README.md)
-  - [`Liquid State Machine`](./Reservoir_Computing/Liquid_State_Machine/README.md)
-  - [`Extreme Learning Machine`](./Reservoir_Computing/Extreme_Learning_Machine/README.md)
-  - [`Echo State Network`](./Reservoir_Computing/Echo_State_Network/README.md)
-  - [`Reservoir Computing`](./Reservoir_Computing/README.md)
+- [`Reservoir Computing`](./reservoir_computing/README.md)
+  - [`Liquid State Machine`](./reservoir_computing/liquid_state_machine/README.md)
+  - [`Extreme Learning Machine`](./reservoir_computing/extreme_learning_machine/README.md)
+  - [`Echo State Network`](./reservoir_computing/echo_state_network/README.md)
+
 + `Ungrouped Networks`
-  - [`Deep Residual Network`](./Ungrouped_Networks/Deep_Residual_Network/README.md)  
-  - [`Kohonen Network`](./Ungrouped_Networks/Kohonen_Network/README.md)  
-  - [`Support Vector Machine`](./Ungrouped_Networks/Support_Vector_Machine/README.md)  
-  - [`Neural Tuning Machine`](./Ungrouped_Networks/Neural_Tuning_Machine/README.md)  
+  - [`Deep Residual Network`](./ungrouped_networks/deep_residual_network/README.md)  
+  - [`Kohonen Network`](./ungrouped_networks/kohonen_network/README.md)  
+  - [`Support Vector Machine`](./ungrouped_networks/support_vector_machine/README.md)  
+  - [`Neural Tuning Machine`](./ungrouped_networks/neural_tuning_machine/README.md)  
 
 <p align="center">
   <img src="https://miro.medium.com/max/1000/1*cuTSPlTq0a_327iTPJyD-Q.png" width="750px">

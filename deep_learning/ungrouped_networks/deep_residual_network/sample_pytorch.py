@@ -139,14 +139,12 @@ class ResNeXt(nn.Module):
 
         return x
 
-def main():
-    model = ResNeXt()
-    print(model)
-
-    inputs = torch.randn(1, 3, 224, 224)
-    y = model.forward(Variable(inputs))
-    print(y)
 
 
-if __name__ == '__main__':
-    main()
+
+model = ResNeXt()
+print(model)
+
+inputs = torch.randn(1, 3, 224, 224)
+y = model.forward(Variable(inputs))
+print(y)

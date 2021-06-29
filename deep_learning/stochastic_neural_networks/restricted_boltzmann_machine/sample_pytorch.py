@@ -15,11 +15,11 @@ n_epochs = 1000
 batch_size = 64
 
 train_loader = torch.utils.data.DataLoader(
-    datasets.MNIST("../../data", train=True, download=True, transform=transforms.Compose([transforms.ToTensor()])),
+    datasets.MNIST("../../../_data", train=True, download=True, transform=transforms.Compose([transforms.ToTensor()])),
     batch_size=batch_size
 )
 test_loader = torch.utils.data.DataLoader(
-    datasets.MNIST("../../data", train=False, transform=transforms.Compose([transforms.ToTensor()])),
+    datasets.MNIST("../../../_data", train=False, transform=transforms.Compose([transforms.ToTensor()])),
     batch_size=batch_size
 )
 
