@@ -21,8 +21,7 @@ Imagine you're car shopping and have decided that gas mileage is a deciding fact
 - [`Quantile Regression`](./quantile_regression/README.md)
 
 <p align="center">
-  <img src="https://static.javatpoint.com/tutorial/machine-learning/images/regression-vs-classification-in-machine-learning.png
-" width="750px">
+    <img src="https://static.javatpoint.com/tutorial/machine-learning/images/regression-vs-classification-in-machine-learning.png" width="500">
 </p>
 
 ## Informative Resources:
