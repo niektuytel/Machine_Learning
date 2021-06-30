@@ -1,8 +1,0 @@
-----------------------------------------------------------
-SFS-Wrapped Naive Bayes Summary Statistics (Testing)
-----------------------------------------------------------
-Data Set : ../_DATA/iris_dataset.txt
-
-Number of Test Instances : 49
-Accuracy : 76.0%
-Optimal Attribute Subset : ['Petal Width in cm', 'Sepal Length in cm', 'Petal Length in cm']

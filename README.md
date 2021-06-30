@@ -31,26 +31,15 @@ If you are a beginner in Machine Learning:
 - [Machine Learning by Google](https://developers.google.com/machine-learning)
 - [Machine Learning by scikit-learn](https://scikit-learn.org/stable/)  
 
-
-
-<!-- `Deep Learning` is a subset of machine learning networks capable of learning (un)supervised from data that is unstructured or unlabeled.   -->
-
-<!-- The best step to get started is trough [`Deep Learning`](./Deep_Learning(DL)).  
-The reason is that you will understand more the purpose of the algorithms  
-and when to use different types of algorithms.   -->
-
-
 When you need to know more about data managment:  
 + https://machinelearningmastery.com/use-different-batch-sizes-training-predicting-python-keras/  
 + https://machinelearningmastery.com/lstm-autoencoders/  
 + https://machinelearningmastery.com/sequence-prediction/  
 + https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/  
 
-
-
 <p align="center">
-    <img src="https://miro.medium.com/max/2628/0*NJFLO8BSVhZy8XNF.png">
-    <img src="https://miro.medium.com/max/2056/1*3Q6BVdxVdcZgJXSRy2tqmg.png">
+    <img src="https://miro.medium.com/max/2628/0*NJFLO8BSVhZy8XNF.png" width="750">
+    <img src="https://miro.medium.com/max/2056/1*3Q6BVdxVdcZgJXSRy2tqmg.png" width="750">
 </p>  
 
 # Usefull Resources:
@@ -59,10 +48,11 @@ When you need to know more about data managment:
 - https://pub.towardsai.net/machine-learning-algorithms-for-beginners-with-python-code-examples-ml-19c6afd60daa
 - https://atcold.github.io/pytorch-Deep-Learning
 - https://www.datatechnotes.com/
+- https://machinelearningmastery.com/types-of-learning-in-machine-learning/
 
 
 
-
-
+Kind Regards,   
+Niek Tuytel  :)
 
 
