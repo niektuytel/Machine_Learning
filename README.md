@@ -10,6 +10,10 @@ To start understanding most of the `Machine Learning` algorithms, you must get t
 + [`Partial Derivatives`](https://www.youtube.com/watch?v=p_di4Zn4wz4&list=PLZHQObOWTQDNPOjrT6KVlfJuKtYTftqH6&index=1)  
 + [`Partial Derivatives exersices`](https://www.youtube.com/watch?v=JAf_aSIJryg) 
 
+
+When there is a clear understanding how  [`Deep Learning`](./deep_learning/README.md) is working nor used on data.  
+[`Supervised Learning`](./supervised_learning/README.md)`, ` [`Unsupervised Learning `](./unsupervised_learning/README.md)` and ` [`Reinforcement Learning`](./reinforcement_learning/README.md) are understandable as well.
+
 # Requirements 
 ```python
   # (required to have programming knowledge)
@@ -18,24 +22,15 @@ To start understanding most of the `Machine Learning` algorithms, you must get t
   pip3 install -r "./requirements.txt"
 ```
 
+If you are a beginner in Machine Learning:  
+- [`Machine Learning by Google`](https://developers.google.com/machine-learning)
+- [`Machine Learning by scikit-learn`](https://scikit-learn.org/stable/)  
+
 ## Subsets of `Machine Learning`:
 + [`Deep Learning`](./deep_learning/README.md) 
 + [`Supervised Learning`](./supervised_learning/README.md)
 + [`UnSupervised Learning`](./unsupervised_learning/README.md)
 + [`Reinforcement Learning`](./reinforcement_learning/README.md)
-
-
-When there is a clear understanding how  [`Deep Learning`](./deep_learning/README.md) is working nor used on data [`Supervised Learning`](./supervised_learning/README.md)`, ` [`Unsupervised Learning `](./unsupervised_learning/README.md)` and ` [`Reinforcement Learning`](./reinforcement_learning/README.md) are understandable as well.
-
-If you are a beginner in Machine Learning:  
-- [Machine Learning by Google](https://developers.google.com/machine-learning)
-- [Machine Learning by scikit-learn](https://scikit-learn.org/stable/)  
-
-When you need to know more about data managment:  
-+ https://machinelearningmastery.com/use-different-batch-sizes-training-predicting-python-keras/  
-+ https://machinelearningmastery.com/lstm-autoencoders/  
-+ https://machinelearningmastery.com/sequence-prediction/  
-+ https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/  
 
 <p align="center">
     <img src="https://miro.medium.com/max/2628/0*NJFLO8BSVhZy8XNF.png" width="750">
@@ -49,6 +44,10 @@ When you need to know more about data managment:
 - https://atcold.github.io/pytorch-Deep-Learning
 - https://www.datatechnotes.com/
 - https://machinelearningmastery.com/types-of-learning-in-machine-learning/
++ https://machinelearningmastery.com/use-different-batch-sizes-training-predicting-python-keras/  
++ https://machinelearningmastery.com/lstm-autoencoders/  
++ https://machinelearningmastery.com/sequence-prediction/  
++ https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/  
 
 
 

@@ -1,9 +1,4 @@
-# ./_EXTRA
-# ./algorithms
-# ./Reinforcement_Learning(RL)
-# ./Supervised_Learning(SL)
-# ./Unsupervised_Learning(UL)
-
+./_deprecated
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
