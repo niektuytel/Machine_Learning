@@ -1,8 +1,0 @@
-matplotlib
-numpy
-pandas
-sklearn
-itertools
-scipy
-imageio
-math
