@@ -15,5 +15,7 @@
 </p>
 
 ## Resources:
-+ https://en.wikipedia.org/wiki/Reinforcement_learning
-+ 
++ https://towardsdatascience.com/reinforcement-learning-101-e24b50e1d292
++ https://karpathy.github.io/2016/05/31/rl/
++ https://www.davidsilver.uk/teaching/
++ http://people.eecs.berkeley.edu/~pabbeel/nips-tutorial-policy-optimization-Schulman-Abbeel.pdf

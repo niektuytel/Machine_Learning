@@ -33,8 +33,8 @@ If you are a beginner in Machine Learning:
 + [`Reinforcement Learning`](./reinforcement_learning/README.md)
 
 <p align="center">
-    <img src="https://miro.medium.com/max/2628/0*NJFLO8BSVhZy8XNF.png" width="750">
-    <img src="https://miro.medium.com/max/2056/1*3Q6BVdxVdcZgJXSRy2tqmg.png" width="750">
+    <!-- <img src="https://miro.medium.com/max/2628/0*NJFLO8BSVhZy8XNF.png" width="750"> -->
+    <img src="https://miro.medium.com/max/903/1*8OSHpISmR1l79yX4I234wg.jpeg" width="750">
 </p>  
 
 # Usefull Resources:
@@ -49,9 +49,5 @@ If you are a beginner in Machine Learning:
 + https://machinelearningmastery.com/sequence-prediction/  
 + https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/  
 
-
-
 Kind Regards,   
 Niek Tuytel  :)
-
-
