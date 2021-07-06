@@ -59,3 +59,9 @@
 + https://bhashkarkunal.medium.com/pytorch-tutorial-from-basic-to-advance-level-a-numpy-replacement-and-deep-learning-framework-that-a3c8dcf9a9d4
 + https://uvadlc-notebooks.readthedocs.io/
 + https://junyanz.github.io/CycleGAN/?source=techstories.org
+
+
+<!-- + https://machinelearningmastery.com/use-different-batch-sizes-training-predicting-python-keras/   -->
+<!-- + https://machinelearningmastery.com/lstm-autoencoders/   -->
+<!-- + https://machinelearningmastery.com/sequence-prediction/   -->
+<!-- + https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/   -->

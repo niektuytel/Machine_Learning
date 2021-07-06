@@ -2,7 +2,8 @@
 `Machine learning` is an application of artificial intelligence (`AI`) that provides systems the ability to automatically learn and improve from experience without being explicitly programmed.
 `Machine learning` focuses on the development of computer programs that can access data and use it to learn for themselves.  
 
-To start understanding most of the `Machine Learning` algorithms, you must get the basic understanding of `Calculus` and `Linear Algebra`.  
+For beginners [`Machine Learning by Google`](https://developers.google.com/machine-learning) and [`Machine Learning by scikit-learn`](https://scikit-learn.org/stable/) will be a good take-off.  
+To start understanding most of the `Machine Learning` algorithms, you must get the basic understanding of `Calculus` and `Linear Algebra`:  
 + [`Linear Algebra`](https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&index=1)
 + [`Calculus`](https://www.youtube.com/watch?v=WUvTyaaNkzM&list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr&index=1)
 + [`Derivatives exersices`](http://derivative-functions.cours-de-math.eu/exercises-derivative-basic.php)  
@@ -14,20 +15,15 @@ To start understanding most of the `Machine Learning` algorithms, you must get t
 When there is a clear understanding how  [`Deep Learning`](./deep_learning/README.md) is working nor used on data.  
 [`Supervised Learning`](./supervised_learning/README.md)`, ` [`Unsupervised Learning `](./unsupervised_learning/README.md)` and ` [`Reinforcement Learning`](./reinforcement_learning/README.md) are understandable as well.
 
-# Requirements 
+## Requirements 
 ```python
   # (required to have programming knowledge)
   # 1 - open a command prompt, in this folder.
   # 2 - paste line below & press enter.
   pip3 install -r "./requirements.txt"
 ```
-
-If you are a beginner in Machine Learning:  
-- [`Machine Learning by Google`](https://developers.google.com/machine-learning)
-- [`Machine Learning by scikit-learn`](https://scikit-learn.org/stable/)  
-
 ## Subsets of `Machine Learning`:
-+ [`Deep Learning`](./deep_learning/README.md) 
++ [`Deep Learning`](./deep_learning/README.md)
 + [`Supervised Learning`](./supervised_learning/README.md)
 + [`UnSupervised Learning`](./unsupervised_learning/README.md)
 + [`Reinforcement Learning`](./reinforcement_learning/README.md)
@@ -44,10 +40,6 @@ If you are a beginner in Machine Learning:
 - https://atcold.github.io/pytorch-Deep-Learning
 - https://www.datatechnotes.com/
 - https://machinelearningmastery.com/types-of-learning-in-machine-learning/
-+ https://machinelearningmastery.com/use-different-batch-sizes-training-predicting-python-keras/  
-+ https://machinelearningmastery.com/lstm-autoencoders/  
-+ https://machinelearningmastery.com/sequence-prediction/  
-+ https://machinelearningmastery.com/encoder-decoder-long-short-term-memory-networks/  
 
 Kind Regards,   
 Niek Tuytel  :)

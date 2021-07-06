@@ -1,7 +1,10 @@
 # Stochastic Neural Networks(SNNs)
 Stochastic neural networks are a type of artificial neural networks built by introducing random variations into the network, either by giving the network's neurons stochastic transfer functions, or by giving them stochastic weights. This makes them useful tools for optimization problems, since the random fluctuations help it escape from local minima.
 
-An example of a neural network using stochastic transfer functions is a Boltzmann machine. Each neuron is binary valued, and the chance of it firing depends on the other neurons in the network.
+An example of a neural network using stochastic transfer functions is a Boltzmann machine. Each neuron is binary valued, and the chance of it firing depends on the other neurons in the network. 
+(`Markov Decision Process(MDP)` is the mathematical framework for `Reinforcement Learning`)
+
+
 
 (best way to learn is from top to bottom).  
 The subsets of `Stochastic Neural Networks`:  

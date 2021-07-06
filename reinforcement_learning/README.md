@@ -15,7 +15,13 @@
 </p>
 
 ## Resources:
++ http://incompleteideas.net/book/RLbook2018.pdf
++ https://gym.openai.com/docs/
++ https://www.davidsilver.uk/teaching/
+
+<!-- 
++ https://www.davidsilver.uk/teaching/
 + https://towardsdatascience.com/reinforcement-learning-101-e24b50e1d292
 + https://karpathy.github.io/2016/05/31/rl/
-+ https://www.davidsilver.uk/teaching/
 + http://people.eecs.berkeley.edu/~pabbeel/nips-tutorial-policy-optimization-Schulman-Abbeel.pdf
++ https://www.youtube.com/watch?v=2pWv7GOvuf0 -->
