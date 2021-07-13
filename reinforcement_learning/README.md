@@ -2,8 +2,7 @@
 Reinforcement learning is a machine learning training method based on rewarding desired behaviors and/or punishing undesired ones. In general, a reinforcement learning agent is able to perceive and interpret its environment, take actions and learn through trial and error.
 
 ## Subsets of `Reinforcement Learning`:
-##### best way is to learn is from `TOP` to `BOTTOM`.  
-+ ...
+##### best way is to learn is from `TOP` to `BOTTOM`.
 + [`Q-Learning`](./q_learning/README.md)
 + [`Deep Q-Learning`](./deep_q_learning/README.md)
 + [`Double Deep Q-Learning`](./double_deep_q_learning/README.md)
