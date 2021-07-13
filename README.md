@@ -24,7 +24,7 @@ When there is a clear understanding how  [`Deep Learning`](./deep_learning/READM
 ```
 
 # [`Deep Learning`](./deep_learning/README.md)
-Usage Type                                                                                                                             | Model Type   | tensorflow | pytorch |  scratch  |
+Usage Type                                                                                                                             | Model Type   | tensorflow | pytorch |   numpy   |
 |--------------------------------------------------------------------------------------------------------------------------------------|--------------|------------|---------|-----------|
 <b>[`Artificial Neural Networks`](./deep_learning/artificial_neural_networks/README.md)</b>
 | | [`Perceptron`](./deep_learning/artificial_neural_networks/perceptron/README.md)                                                                   |⬜️         |⬜️       |✅         |
@@ -50,17 +50,17 @@ Usage Type                                                                      
 | | [`Restricted Boltzmann Machine`](./deep_learning/stochastic_neural_networks/restricted_boltzmann_machine/README.md)                               |⬜️         |✅       |✅         |
 <b>[`Reservoir Computing`](./deep_learning/reservoir_computing/README.md)</b>
 | | [`Liquid State Machine`](./deep_learning/reservoir_computing/liquid_state_machine/README.md)                                                      |⬜️         |⬜️       |⬜️         |
-| | [`Extreme Learning Machine`](./deep_learning/reservoir_computing/extreme_learning_machine/README.md)                                              |⬜️         |⬜️       |✅(sample) |
-| | [`Echo State Network`](./deep_learning/reservoir_computing/echo_state_network/README.md)                                                          |⬜️         |⬜️       |✅(sample) |
+| | [`Extreme Learning Machine`](./deep_learning/reservoir_computing/extreme_learning_machine/README.md)                                              |⬜️         |⬜️       |✅         |
+| | [`Echo State Network`](./deep_learning/reservoir_computing/echo_state_network/README.md)                                                          |⬜️         |⬜️       |✅         |
 <b>[`Ungrouped Networks`](./deep_learning/ungrouped_networks/README.md)</b>
 | | [`Deep Residual Network`](./deep_learning/ungrouped_networks/deep_belief_network/README.md)                                                       |✅         |✅       |⬜️         |
 | | [`Kohonen Network`](./deep_learning/ungrouped_networks/kohonen_network/README.md)                                                                 |⬜️         |✅       |⬜️         |
 | | [`Neural Tuning Machine`](./deep_learning/ungrouped_networks/neural_tuning_machine/README.md)                                                     |⬜️         |✅       |⬜️         |
-| | [`Support Vector Machine`](./deep_learning/ungrouped_networks/support_vector_machine/README.md)                                                   |⬜️         |⬜️       |✅(sample) |
+| | [`Support Vector Machine`](./deep_learning/ungrouped_networks/support_vector_machine/README.md)                                                   |⬜️         |⬜️       |✅         |
  
 # [`Supervised Learning`](./supervised_learning/README.md)
-Usage Type                                                                                                   | Model Type   | sample |
-|------------------------------------------------------------------------------------------------------------|--------------|--------|
+Usage Type                                                                                                   | Model Type   | numpy |
+|------------------------------------------------------------------------------------------------------------|--------------|-------|
 <b>[`Classification`](./supervised_learning/classification/README.md)</b>
 | | [`Binary Classification`](./supervised_learning/classification/binary_classification/README.md)                         |✅     |
 | | [`Imbalanced Classification`](./supervised_learning/classification/imbalanced_classification/README.md)                 |✅     |
@@ -84,24 +84,24 @@ Usage Type                                                                      
 
 
 # [`Unsupervised Learning`](./unsupervised_learning/README.md)
-Usage Type                                                                                                                                   | Model Type   | sample | scratch |
-|--------------------------------------------------------------------------------------------------------------------------------------------|--------------|--------|---------|
+Usage Type                                                                                                                                   | Model Type   | sample | numpy |
+|--------------------------------------------------------------------------------------------------------------------------------------------|--------------|--------|-------|
 <b>[`Clustering`](./unsupervised_learning/clustering/README.md)</b>
-| | [`Affinity Propagation`](./unsupervised_learning/clustering/affinity_propagation/README.md)                                                             |✅     |✅       |
-| | [`Agglomerative Clustering`](./unsupervised_learning/clustering/agglomerative_clustering/README.md)                                                     |✅     |✅       |
-| | [`BIRCH`](./unsupervised_learning/clustering/BIRCH/README.md)                                                                                           |✅     |⬜️       |
-| | [`DBSCAN`](./unsupervised_learning/clustering/DBSCAN/README.md)                                                                                         |✅     |✅       |
-| | [`Gaussian Mixture`](./unsupervised_learning/clustering/gaussian_mixture/README.md)                                                                     |✅     |✅       |
-| | [`K-Means`](./unsupervised_learning/clustering/k_means/README.md)                                                                                       |✅     |✅       |
-| | [`Mean Shift`](./unsupervised_learning/clustering/mean_shift/README.md)                                                                                 |✅     |✅       |
-| | [`OPTICS`](./unsupervised_learning/clustering/OPTICS/README.md)                                                                                         |✅     |✅       |
-| | [`Spectral Clustering`](./unsupervised_learning/clustering/spectral_clustering/README.md)                                                               |✅     |✅       |
+| | [`Affinity Propagation`](./unsupervised_learning/clustering/affinity_propagation/README.md)                                                             |✅      |✅    |
+| | [`Agglomerative Clustering`](./unsupervised_learning/clustering/agglomerative_clustering/README.md)                                                     |✅      |✅    |
+| | [`BIRCH`](./unsupervised_learning/clustering/BIRCH/README.md)                                                                                           |✅      |⬜️    |
+| | [`DBSCAN`](./unsupervised_learning/clustering/DBSCAN/README.md)                                                                                         |✅      |✅    |
+| | [`Gaussian Mixture`](./unsupervised_learning/clustering/gaussian_mixture/README.md)                                                                     |✅      |✅    |
+| | [`K-Means`](./unsupervised_learning/clustering/k_means/README.md)                                                                                       |✅      |✅    |
+| | [`Mean Shift`](./unsupervised_learning/clustering/mean_shift/README.md)                                                                                 |✅      |✅    |
+| | [`OPTICS`](./unsupervised_learning/clustering/OPTICS/README.md)                                                                                         |✅      |✅    |
+| | [`Spectral Clustering`](./unsupervised_learning/clustering/spectral_clustering/README.md)                                                               |✅      |✅    |
 <b>[`Dimensionality Reduction`](./unsupervised_learning/dimensionality_reduction/README.md)</b>          
-| | [`Latent Semantic Analysis`](./unsupervised_learning/dimensionality_reduction/latent_semantic_analysis/README.md)                                       |✅     |⬜️       |
-| | [`Non Negative Matrix Factorization`](./unsupervised_learning/dimensionality_reduction/non_negative_matrix_factorization/README.md)                     |✅     |⬜️       |
-| | [`Principal Component Analysis`](./unsupervised_learning/dimensionality_reduction/principal_component_analysis/README.md)                               |✅     |✅       |
-| | [`T-Distributed Stochastic Neighbor Embedding`](./unsupervised_learning/dimensionality_reduction/t_distributed_stochastic_neighbor_embedding/README.md) |✅     |⬜️       |
-| | [`Uniform Manifold Approximation And Projection`](./unsupervised_learning/dimensionality_reduction/latent_semantic_analysis/README.md)                  |✅     |⬜️       |
+| | [`Latent Semantic Analysis`](./unsupervised_learning/dimensionality_reduction/latent_semantic_analysis/README.md)                                       |✅      |⬜️    |
+| | [`Non Negative Matrix Factorization`](./unsupervised_learning/dimensionality_reduction/non_negative_matrix_factorization/README.md)                     |✅      |⬜️    |
+| | [`Principal Component Analysis`](./unsupervised_learning/dimensionality_reduction/principal_component_analysis/README.md)                               |✅      |✅    |
+| | [`T-Distributed Stochastic Neighbor Embedding`](./unsupervised_learning/dimensionality_reduction/t_distributed_stochastic_neighbor_embedding/README.md) |✅      |⬜️    |
+| | [`Uniform Manifold Approximation And Projection`](./unsupervised_learning/dimensionality_reduction/latent_semantic_analysis/README.md)                  |✅      |⬜️    |
 
 # [`Reinforcement Learning`](./reinforcement_learning/README.md)
 | Model Type                                                                                                    | sample |
