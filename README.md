@@ -36,7 +36,7 @@ Usage Type                                                                      
 | | [`Long Short Term Memory`](./deep_learning/recurrent_neural_networks/long_short_term_memory/README.md)                                            |✅         |✅       |⬜️         |
 | | [`Gated Recurrent Unit`](./deep_learning/recurrent_neural_networks/gated_recurrent_unit/README.md)                                                |✅         |✅       |⬜️         |
 <b>[`Auto Encoders`](./deep_learning/autoencoders/README.md)</b>
-| | [`Auto Encoders`](./deep_learning/autoencoders/autoencoders/README.md)                                                                            |✅         |✅       |✅         |
+| | [`Auto Encoder`](./deep_learning/autoencoders/autoencoder/README.md)                                                                            |✅         |✅       |✅         |
 | | [`Denoising Autoencoder`](./deep_learning/autoencoders/denoising_autoencoder/README.md)                                                           |✅         |✅       |✅         |
 | | [`Generative Adversarial Network`](./deep_learning/autoencoders/generative_adversarial_network/README.md)                                         |✅         |✅       |✅         |
 | | [`Sparse Autoencoder`](./deep_learning/autoencoders/sparse_autoencoder/README.md)                                                                 |✅         |✅       |⬜️         |
