@@ -34,12 +34,14 @@ When there is a clear understanding how  [`Deep Learning`](./deep_learning/READM
 </p>  
 
 # Usefull Resources:
-- https://gluon.mxnet.io/
-- https://developers.google.com/machine-learning
-- https://pub.towardsai.net/machine-learning-algorithms-for-beginners-with-python-code-examples-ml-19c6afd60daa
-- https://atcold.github.io/pytorch-Deep-Learning
-- https://www.datatechnotes.com/
-- https://machinelearningmastery.com/types-of-learning-in-machine-learning/
++ https://www.youtube.com/user/stanfordonline
++ https://www.youtube.com/channel/UC58v9cLitc8VaCjrcKyAbrw
++ https://developers.google.com/machine-learning
++ https://machinelearningmastery.com
++ https://gluon.mxnet.io/
++ https://pub.towardsai.net
++ https://atcold.github.io/pytorch-Deep-Learning
++ https://www.datatechnotes.com/
 
 Kind Regards,   
 Niek Tuytel  :)
